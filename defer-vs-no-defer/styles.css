@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Kanit', sans-serif;
+    font-size: 10em;
+}
+
+.snap-parent {
+    overflow: scroll;
+    width: 100vw;
+    height: 100vh;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+}
+
+section.sec-purpol   { background: rgb(150, 0,   150); }
+section.sec-fucksia  { background: rgb(200, 0,   100); }
+section.sec-oranguan { background: rgb(225, 170, 60);}
+
+section > p {
+    color: rgb(220, 220, 220);
+    padding: 20px;
+    margin: 0px
+    cursor: pointer;
+}
+
+section > p:hover {
+    color: rgb(0, 255, 255);
+    cursor: pointer;
+}
