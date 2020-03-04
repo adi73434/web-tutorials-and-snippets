@@ -1,0 +1,67 @@
+<!DOCTYPE html5>
+<html>
+<body>
+
+<p id="textElement">Hover over this text or click the body</p>
+
+<script>
+
+// This function triggers instantly,
+// you can read up on it here: https://developer.mozilla.org/en-US/docs/Glossary/IIFE
+(function() {
+	// Set a variable to use as a "shortcut" to access the text element
+	const textElement = document.getElementById('textElement');
+
+
+
+	// Example event listeners for the id "textElement"
+	textElement.addEventListener('mouseover', () => {
+		textElement.style.color = '#ff0064';
+	});
+	
+	
+
+    textElement.addEventListener('mouseleave', () => {
+		textElement.style.color = '#222222';
+	});
+    
+	
+	
+    // Listen to the main body of the page... you probably shouldn't do this
+    // for just an image thing, but it's a thing
+    // This triggers on mouse-down
+    document.addEventListener('mousedown', () => {
+    
+    	// This sets the main body colour to fuchsia
+		document.body.style.backgroundColor = '#ff0064';
+        
+        // You can run other stuff here, but usually you would prefer
+        // to do stuff on mouse up
+        // OR you just listen for "click" event instead of mouseup/mousedown
+        // but this is just as an example
+	});
+	
+	
+
+    // This triggers after letting go of the mouse:  mouse-up
+    document.addEventListener('mouseup', () => {
+    	// This sets the main body colour to a dark gray
+		document.body.style.backgroundColor = '#222222';
+        
+        // Here you can do window.location to redirect
+        // OR, again, just use a "click" eventListener instead of mouseup/mousedown
+        
+        // If you want to simulate someone clicking on a link, use location.href.
+		window.location.href = "http://google.com";
+		
+        // If you want to simulate an HTTP redirect, use location.replace.
+        // location.replace = "http://google.com";
+        
+
+	});
+    
+})();
+</script>
+
+</body>
+</html>
