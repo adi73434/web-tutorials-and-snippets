@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            color: rgb(222, 222, 222);
+            font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: rgb(22, 22, 22);
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .link-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .link-container p {
+            padding: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(255, 0, 50);
+        }
+
+        a:hover {
+            color: rgb(0, 255, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="link-container">
+        <a href="https://jsperf.com/queryselector-vs-verbose-vs-abstracted/1">View the test on jsperf</a>
+        <p class=" multiple">Foo</p>
+        <p id="foo">Foo</p>
+        <p class="multiple">Foo</p>
+        <p class="foo">Foo</p>
+        <p class="multiple">Foo</p>
+        <p id="bJMfEMUQuRnNCYDcuBIH">Foo</p>
+        <p class="multiple">Foo</p>
+        <p class="bJMfEMUQuRnNCYDcuBIH">Foo</p>
+        <p class="multiple">Foo</p>
+    </div>
+    <script>
+        (() => {
+            function getDOM(targetType, targetElement) {
+                let element = '';
+                if (targetType === 'id') {
+                    element = document.getElementById(targetElement);
+                }
+                if (targetType === 'class') {
+                    element = document.getElementsByClassName(targetElement);
+                }
+                if (targetType === 'tag') {
+                    element = document.getElementsByTagName(targetElement)[0];
+                }
+                return element;
+            }
+
+            // Single ID:
+            {
+                // [Single ID] Long getElementById
+                console.log(document.getElementById('bJMfEMUQuRnNCYDcuBIH'));
+                // [Single ID] Short getElementById
+                console.log(document.getElementById('foo'));
+
+                // [Single ID] Long querySelector ID
+                console.log(document.querySelector('#bJMfEMUQuRnNCYDcuBIH'));
+                // [Single ID] Short querySelector ID
+                console.log(document.querySelector('#foo'));
+
+                // [Single ID] Long Abstracted
+                console.log(getDOM('id', 'bJMfEMUQuRnNCYDcuBIH'));
+                // [Single ID] Short Abstracted
+                console.log(getDOM('id', 'foo'));
+
+            }
+
+            // Single Class:
+            {
+                // [Single Class] Long getElementsByClassName
+                console.log(document.getElementsByClassName('bJMfEMUQuRnNCYDcuBIH')[0]);
+                // [Single Class] Short getElementsByClassName
+                console.log(document.getElementsByClassName('foo')[0]);
+
+                // [Single Class] Long querySelector Class
+                console.log(document.querySelector('.foo'));
+                // [Single Class] Short querySelector Class
+                console.log(document.querySelector('.bJMfEMUQuRnNCYDcuBIH'));
+            }
+
+            // All Class;
+            {
+                // [Multi Class] getElementsByClassName
+                console.log(document.getElementsByClassName('multiple'));
+
+                // [Multi Class] querySelectorAll Class
+                console.log(document.querySelectorAll('.multiple'));
+
+                // [Multi Class] Multiple Abstracted
+                console.log(getDOM('class', 'multiple'));
+            }
+        })();
+    </script>
+</body>
+
+</html>
