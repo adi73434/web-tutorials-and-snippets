@@ -13,3 +13,20 @@ function factorial(n) {
 
 	return fallback;
 }
+
+
+function asdf(a) {
+	setTimeout(() => {
+		console.log('calling asdf');
+		console.log('A is: ' + a);
+		aMinusOne = a - 1;
+		if (a === 0) {			/* Some inconspicuous comment
+			asdf(aMinusOne);	*/
+		}						 
+		else {
+			asdf(aMinusOne);
+		}
+	}, 50);
+}
+
+asdf(10);
