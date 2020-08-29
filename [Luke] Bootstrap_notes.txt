@@ -1,0 +1,62 @@
+COLUMNS AND ROWS
+when splitting rows use:
+
+xs = extra small screens (Iphone lul)
+sm = small screens (phones)
+md = medium screens (tablets and laptops)
+lg = large screens (desktop)
+
+To achieve the same look across all platforms use xs, this will force the grid to appear the same down to the smallest size.
+E.G: 
+<div class="row">
+  <div class="col-xs-4">.col-xs-4</div>
+  <div class="col-xs-4">.col-xs-4</div>
+  <div class="col-xs-4">.col-xs-4</div>
+</div>
+
+the final number in the .col class decides how much of the page that column will span, ach row can have a max widtyh of 12.
+
+the contents of that column must then be stated within the column's div.
+
+DEFAULT FONT SIZES AND ATTRIBUTES
+Default font size is 16px in the body and all p tags, there is also a 5px margin at the bottom of all text to allow for spacing.
+
+HEADING SIZES:
+h1 = 36px,     h2 = 30px,     h3 = 24px,     h4 = 18px,     h5 = 14px,     h6 = 12px.
+
+the 'small' class can be used to create subheading within any heading 
+E.G:     
+<h1>h1 heading <small>secondary text</small></h1>
+
+the 'mark' class will highlight text
+E.G: 
+ <p>Use the mark element to <mark>highlight</mark> text.</p>
+
+The 'abbr' class can be used to mark abreviations in text or give more information when the cursor is above the selected text. The abbr must be given a title in it's opening tag.
+E.G: 
+<p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+
+For making lists with descriptions use 'dt' for the description title and 'dd' for the description in the list.
+E.G:
+  <dl>
+    <dt>Coffee</dt>
+    <dd>- black hot drink</dd>
+    <dt>Milk</dt>
+    <dd>- white cold drink</dd>
+  </dl>     
+
+.list-unstyled = to remove list styling
+
+.dl-horizontal = to switch all lists in a dl tag to be aligned horizontally.
+
+
+the 'pre' tag allows for a block of text that can oboth preserve line breaks and spaces, using the tag pre-scrollable also alows the text to be scrolled through if it exceeds 350px.
+
+MORE TYPOGRAHPY AT: https://www.w3schools.com/bootstrap/bootstrap_typography.asp
+
+
+TABLES [TOO MUCH TO WRITE READ HERE]: https://www.w3schools.com/bootstrap/bootstrap_tables.asp
+
+
+
+current progress: https://www.w3schools.com/bootstrap/bootstrap_tables.asp
