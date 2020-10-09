@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+		* {
+			font-family: 'Open Sans';
+		}
+
+		.switch {
+			position: relative;
+			display: inline-block;
+			width: 60px;
+			height: 34px;
+		}
+
+		.switch input {
+			opacity: 0;
+			width: 0;
+			height: 0;
+		}
+
+		.slider {
+			position: absolute;
+			cursor: pointer;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: #ccc;
+			-webkit-transition: .4s;
+			transition: .4s;
+		}
+
+		.slider:before {
+			position: absolute;
+			content: "";
+			height: 26px;
+			width: 26px;
+			left: 4px;
+			bottom: 4px;
+			background-color: white;
+			-webkit-transition: .4s;
+			transition: .4s;
+		}
+
+		input:checked+.slider {
+			background-color: #dd187a;
+		}
+
+		input:focus+.slider {
+			box-shadow: 0 0 1px#dd187a;
+		}
+
+		input:checked+.slider:before {
+			-webkit-transform: translateX(26px);
+			-ms-transform: translateX(26px);
+			transform: translateX(26px);
+		}
+
+		/* Rounded sliders */
+		.slider.round {
+			border-radius: 34px;
+		}
+
+		.slider.round:before {
+			border-radius: 50%;
+		}
+
+
+
+		.default-button {
+			background-color: #dd187a;
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+			transition-duration: 0.2s;
+		}
+
+		.default-button-small {
+			background-color: #dd187a;
+			border: none;
+			color: white;
+			padding: 3px 5px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 12px;
+			margin: 4px 2px;
+			cursor: pointer;
+			transition-duration: 0.2s;
+		}
+
+		.default-button:hover,
+		.default-button-small:hover {
+			background-color: #6517e4;
+		}
+
+
+
+		.formContainer {
+			border-radius: 5px;
+			background-color: #f2f2f2;
+			padding: 20px;
+		}
+
+		.inputField,
+		.inputSelect {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+
+		.smallWidth {
+			width: 20%;
+		}
+
+		.submitForm {
+			width: 100%;
+			background-color: #dd187a;
+			color: white;
+			padding: 14px 20px;
+			margin: 8px 0;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			transition-duration: 0.2s;
+		}
+
+		.submitForm:hover {
+			background-color: #6517e4;
+		}
+
+
+
+
+
+
+
+		.hidden-wc {
+
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="formContainer">
+		<form action="javascript:void(0);">
+
+			<label for="cpuCostEl">cpuCost</label>
+			<input id="cpuCostEl" value="300" type="number" class="inputField">
+
+
+			<label for="gpuCostEl">gpuCost</label>
+			<input id="gpuCostEl" value="300" type="number" class="inputField">
+
+
+			<label for="ramCostEl">ramCost</label>
+			<input id="ramCostEl" value="100" type="number" class="inputField">
+
+
+			<label for="moboCostEl">moboCost</label>
+			<input id="moboCostEl" value="150" type="number" class="inputField">
+
+
+			<label for="psuCostEl">psuCost</label>
+			<input id="psuCostEl" value="100" type="number" class="inputField">
+
+
+			<label for="caseCostEl">caseCost</label>
+			<input id="caseCostEl" value="100" type="number" class="inputField">
+
+
+			<label for="fan120mmCostEl">120mm fan cost</label>
+			<input id="fan120mmCostEl" value="15" type="number" class="inputField">
+			
+			<label for="fan140mmCostEl">140mm fan cost</label>
+			<input id="fan140mmCostEl" value="18" type="number" class="inputField">
+
+
+			<label for="caseFan120mmAmountEl">Number of 120mm case fans</label>
+			<input id="caseFan120mmAmountEl" value="4" type="number" class="inputField">
+			
+			<label for="caseFan140mmAmountEl">Number of 140mm case fans</label>
+			<input id="caseFan140mmAmountEl" value="2" type="number" class="inputField">
+
+
+			<a>Watercooling?</a>
+			<label class="switch">
+				<input id="switchWatercoolingSwitch" type="checkbox">
+				<span class="slider"></span>
+			</label>
+
+
+			<div id="wcOptionsContainer" class="hidden-wc">
+
+				<label for="wc_cpuCostEl">CPU Block Cost</label>
+				<input id="wc_cpuCostEl" value="80" type="number" class="inputField">
+
+
+				<label for="wc_pumpCostCostEl">Pump Cost</label>
+				<input id="wc_pumpCostCostEl" value="120" type="number" class="inputField">
+
+
+				<label for="wc_tubingCostCostEl">Tubing Cost</label>
+				<input id="wc_tubingCostCostEl" value="20" type="number" class="inputField">
+
+
+				<label for="wc_fittingsCostCostEl">Cost of one fitting</label>
+				<input id="wc_fittingsCostCostEl" value="3" type="number" class="inputField">
+
+
+				<label for="wc_liquidCostEl">Liquid Cost</label>
+				<input id="wc_liquidCostEl" value="15" type="number" class="inputField">
+				
+				<label for="wc_rad120mmCostEl">Cost of 120mm rad</label>
+				<input id="wc_rad120mmCostEl" value="50" type="number" class="inputField">
+				
+				<label for="wc_rad140mmCostEl">Cost of 140mm rad</label>
+				<input id="wc_rad140mmCostEl" value="60" type="number" class="inputField">
+
+
+
+				<button id="addRadSelectionBtn" class="default-button">Add Radiator</button>
+				<select id="radSelectionSizeEl" type="number" class="inputSelect smallWidth">
+					<option value="120" type="number">120 mm</option>
+					<option value="240" type="number">240 mm</option>
+					<option value="360" type="number">360 mm</option>
+					<option value="480" type="number">480 mm</option>
+					<option value="140" type="number">140 mm</option>
+					<option value="280" type="number">280 mm</option>
+					<option value="420" type="number">420 mm</option>
+					<option value="560" type="number">560 mm</option>
+				</select>
+				<select id="radSelectionFanEl" type="number" class="inputSelect smallWidth">
+					<option value="pushpull">Push and Pull</option>
+					<option value="oneside">Push or Pull only</option>
+				</select>
+
+
+
+				<div id="addedRadListContainer">
+				</div>
+
+			</div>
+
+
+			<input id="computeCostBtn" type="submit" value="Compute!" class="submitForm">
+
+		</form>
+	</div>
+	<label for="systemCostOutputEl">System Cost</label>
+	<input id="systemCostOutputEl" class="inputField" readonly>
+
+	<label for="systemWcCostOutputEl" class="hidden-wc">Watercooling Cost</label>
+	<input id="systemWcCostOutputEl" class="hidden-wc inputField" readonly>
+
+
+
+
+
+	<script defer>
+		// Main components
+		const cpuCostEl = document.getElementById("cpuCostEl");
+		const gpuCostEl = document.getElementById("gpuCostEl");
+		const ramCostEl = document.getElementById("ramCostEl");
+		const moboCostEl = document.getElementById("moboCostEl");
+		const psuCostEl = document.getElementById("psuCostEl");
+		const caseCostEl = document.getElementById("caseCostEl");
+		const fan120mmCostEl = document.getElementById("fan120mmCostEl");
+		const fan140mmCostEl = document.getElementById("fan140mmCostEl");
+		const caseFan120mmAmountEl = document.getElementById("caseFan120mmAmountEl");
+		const caseFan140mmAmountEl = document.getElementById("caseFan140mmAmountEl");
+
+
+		// Switch WC
+		const switchWatercoolingSwitch = document.getElementById("switchWatercoolingSwitch");
+
+
+		// Main WC components
+		const wc_cpuCostEl = document.getElementById("wc_cpuCostEl");
+		const wc_pumpCostCostEl = document.getElementById("wc_pumpCostCostEl");
+		const wc_tubingCostCostEl = document.getElementById("wc_tubingCostCostEl");
+		const wc_fittingsCostCostEl = document.getElementById("wc_fittingsCostCostEl");
+		const wc_liquidCostEl = document.getElementById("wc_liquidCostEl");
+		const wc_rad120mmCostEl = document.getElementById("wc_rad120mmCostEl");
+		const wc_rad140mmCostEl = document.getElementById("wc_rad140mmCostEl");
+
+		// WC rad and fan st		let wc_rad140mmCost;uff
+		const wcOptionsContainer = document.getElementById("wcOptionsContainer");
+
+		const addRadSelectionBtn = document.getElementById("addRadSelectionBtn");
+		const radSelectionSizeEl = document.getElementById("radSelectionSizeEl");
+		const radSelectionFanEl = document.getElementById("radSelectionFanEl");
+		const addedRadListContainer = document.getElementById("addedRadListContainer");
+
+
+		// Compute
+		const computeCostBtn = document.getElementById("computeCostBtn");
+
+
+		// Output
+		const systemCostOutputEl = document.getElementById("systemCostOutputEl");
+		const systemWcCostOutputEl = document.getElementById("systemWcCostOutputEl");
+
+
+
+
+
+		let isUsingWatercooling = false;
+
+		const checkAndToggleWatercoolingOptionDisplay = () => {
+			console.log(switchWatercoolingSwitch.checked);
+			if (switchWatercoolingSwitch.checked == true) {
+				isUsingWatercooling = true;
+				systemWcCostOutputEl.classList.remove("hidden-wc");
+				wcOptionsContainer.classList.remove("hidden-wc");
+			} else {
+				systemWcCostOutputEl.classList.add("hidden-wc");
+				wcOptionsContainer.classList.add("hidden-wc");
+			}
+		}
+
+		// Also run this on startup just to sync options with what the button is set to
+		checkAndToggleWatercoolingOptionDisplay();
+
+		// Show/hide WC UI options
+		switchWatercoolingSwitch.onclick = () => {
+			checkAndToggleWatercoolingOptionDisplay();
+		}
+
+
+
+
+
+		let cpuCost = 0;
+		let gpuCost = 0;
+		let ramCost = 0;
+		let moboCost = 0;
+		let psuCost = 0;
+		let caseCost = 0;
+		let fan120mmCost = 0;
+		let fan140mmCost = 0;
+		let caseFan120mmAmount = 0;
+		let caseFanTotalCost = 0;
+		let baseSystemCost = 0;
+
+		let wc_cpuCost = 0;
+		let wc_pumpCost = 0;
+		let wc_tubingCost = 0;
+		let wc_fittingsCost = 0;
+		let wc_fittingsAmount = 0;
+		let wc_fittingsTotalCost = 0;
+		let wc_liquidCost = 0;
+
+		let wc_fan120mmAmount = 0;
+		let wc_fan140mmAmount = 0;
+
+		let wc_fan120mmCostTotal = 0;
+		let wc_fan140mmCostTotal = 0;
+
+
+		let wc_oneside120RadSizeTotal = 0;
+		// let wc_oneside120FanCostTotal;
+
+		let wc_pushpull120RadSizeTotal = 0;
+		// let wc_pushpull120FanCostTotal;
+
+		let wc_oneside140RadSizeTotal = 0;
+		// let wc_oneside140FanCostTotal;
+
+		let wc_pushpull140RadSizeTotal = 0;
+		// let wc_pushpull140FanCostTotal;
+
+		let wc_rad120mmCost = 0;
+		let wc_rad140mmCost = 0;
+
+		let wc_rad120mmCostTotal = 0;
+		let wc_rad140mmCostTotal = 0;
+
+
+		// This variable is needed to ensure that when the array has items removed, new 
+		// objects' IDs do not collide with existing ones as the array length shrinks
+		let addedRadiatorOjectIterator = 0;
+
+		let arrayOfAddedRadiatorObjects = [];
+
+		const renderNewlyAddedRadiator = () => {
+
+			// Get the index of the arrayOfAddedRadiatorObjects item where iterator matches addedRadiatorOjectIterator (latest item)
+			var removeIndex = arrayOfAddedRadiatorObjects.map(item => item.iterator).indexOf(addedRadiatorOjectIterator);
+			const lastRadObject = arrayOfAddedRadiatorObjects[removeIndex];
+
+			const concatRadDescript = lastRadObject.radiatorSize + "mm " + lastRadObject.pushpull;
+
+			var tree = document.createDocumentFragment();
+
+			var radInfo = document.createElement("input");
+			// Set this ID so it can be targetted and removed
+			radInfo.setAttribute("data-rad-object-id", addedRadiatorOjectIterator);
+			radInfo.setAttribute("value", concatRadDescript);
+			radInfo.classList.add("inputField");
+
+			var removeBtn = document.createElement("button");
+			removeBtn.classList.add("default-button-small");
+			// Set this ID so it can be targetted and removed
+			removeBtn.setAttribute("data-rad-object-id", addedRadiatorOjectIterator);
+			// Set the onclick to call a function that calls removeRadiatorAsSelected with the object element id
+			removeBtn.onclick = function () {
+				removeRadiatorAsSelected(addedRadiatorOjectIterator);
+			};
+			removeBtn.appendChild(document.createTextNode("removeBtnText"));
+
+			tree.appendChild(radInfo);
+			tree.appendChild(removeBtn);
+			addedRadListContainer.appendChild(tree);
+
+		}
+
+		const addRadiatorAsSelected = () => {
+
+			let newRadiatorObject = {
+				// make sure radiatorSize is a number, not a string
+				iterator: addedRadiatorOjectIterator,
+				radiatorSize: Number(radSelectionSizeEl.value),
+				pushpull: radSelectionFanEl.value
+			};
+			arrayOfAddedRadiatorObjects.push(newRadiatorObject);
+			
+			renderNewlyAddedRadiator();
+			
+			// Make the next ID the latest, and use that to track the next object
+			addedRadiatorOjectIterator++;
+		}
+
+		const removeRadiatorAsSelected = (radObjectToRemove) => {
+			// arrayOfAddedRadiatorObjects
+
+			// arrayOfAddedRadiatorObjects.splice(radObjectToRemove);
+
+			// Get the index of the arrayOfAddedRadiatorObjects item where iterator matches radObjectToRemove
+			var removeIndex = arrayOfAddedRadiatorObjects.map(item => item.iterator).indexOf(radObjectToRemove);
+
+			// Remove said item by index
+			arrayOfAddedRadiatorObjects.splice(removeIndex, 1);
+
+
+			const elsToYeet = document.querySelectorAll('[data-rad-object-id]');
+
+			// Remove the "radInfo" and "removeBtn"
+			elsToYeet[0].remove();
+			elsToYeet[1].remove();
+		};
+
+
+		addRadSelectionBtn.onclick = () => {
+			addRadiatorAsSelected();
+		}
+
+
+
+
+
+		const getBasePartPrices = () => {
+			cpuCost = Number(cpuCostEl.value);
+			gpuCost = Number(gpuCostEl.value);
+			ramCost = Number(ramCostEl.value);
+			moboCost = Number(moboCostEl.value);
+			psuCost = Number(psuCostEl.value);
+			caseCost = Number(caseCostEl.value);
+			fan120mmCost = Number(fan120mmCostEl.value);
+			fan140mmCost = Number(fan140mmCostEl.value);
+			caseFan120mmAmount = Number(caseFan120mmAmountEl.value);
+			caseFan140mmAmount = Number(caseFan140mmAmountEl.value);
+			
+			caseFanTotalCost = ((caseFan120mmAmount * fan120mmCost) + caseFan140mmAmount * fan140mmCost);
+		};
+
+
+		const getWcPartInfo = () => {
+			wc_cpuCost = Number(wc_cpuCostEl.value);
+			wc_pumpCost = Number(wc_pumpCostCostEl.value);
+			wc_tubingCost = Number(wc_tubingCostCostEl.value);
+			wc_fittingsCost = Number(wc_fittingsCostCostEl.value);
+			wc_liquidCost = Number(wc_liquidCostEl.value);
+			wc_rad120mmCost = Number(wc_rad120mmCostEl.value);
+			wc_rad140mmCost = Number(wc_rad140mmCostEl.value);
+		}
+
+
+
+		// Compute values from UI
+		computeCostBtn.onclick = () => {
+			// Reset these as they are incremented, not overwritten
+			wc_oneside120RadSizeTotal = 0;
+			wc_pushpull120RadSizeTotal = 0;
+			wc_oneside140RadSizeTotal = 0;
+			wc_pushpull140RadSizeTotal = 0;
+			wc_fittingsAmount = 0;
+
+			getBasePartPrices();
+
+			// Calculate base part prices
+			baseSystemCost = cpuCost + gpuCost + ramCost + moboCost + psuCost + caseCost + caseFanTotalCost;
+
+			// Update UI
+			systemCostOutputEl.value = baseSystemCost;
+
+			if (isUsingWatercooling) {
+				getWcPartInfo();
+
+				arrayOfAddedRadiatorObjects.forEach(x => {
+					// Check if oneside or pushpull
+					// Check if modulus of rad size leaves no remainder (aka that's the actual size)
+					// Add up all oneside and pushpull rad sizes
+					// Add two fittings per any rad
+					console.log(wc_fittingsAmount);
+					if (x.pushpull === "oneside" && (x.radiatorSize % 120) === 0) {
+						wc_fittingsAmount += 2;
+						wc_oneside120RadSizeTotal += x.radiatorSize;
+					} else if (x.pushpull === "pushpull" && (x.radiatorSize % 120) === 0) {
+						wc_fittingsAmount += 2;
+						wc_pushpull120RadSizeTotal += x.radiatorSize;
+					} else if (x.pushpull === "oneside" && (x.radiatorSize % 140) === 0) {
+						wc_fittingsAmount += 2;
+						wc_oneside140RadSizeTotal += x.radiatorSize;
+					} else if (x.pushpull === "pushpull" && (x.radiatorSize % 140) === 0) {
+						wc_fittingsAmount += 2;
+						wc_pushpull140RadSizeTotal += x.radiatorSize;
+					}
+				});
+
+
+				// Get number of 120 and 140mm fans based on rad sizes
+				wc_fan120mmAmount = (
+					(wc_oneside120RadSizeTotal / 120) +
+					((wc_pushpull120RadSizeTotal / 120) * 2)
+				);
+
+				wc_fan140mmAmount = (
+					(wc_oneside140RadSizeTotal / 140) +
+					((wc_pushpull140RadSizeTotal / 140) * 2)
+				);
+
+				// Get total fan cost for rads
+				wc_fan120mmCostTotal = (
+					(wc_fan120mmAmount * fan120mmCost)
+				);
+
+				wc_fan140mmCostTotal = (
+					(wc_fan140mmAmount * fan140mmCost)
+				);
+
+
+				// 
+				wc_rad120mmCostTotal = (
+					((wc_oneside120RadSizeTotal / 120) * wc_rad120mmCost) + 
+					((wc_pushpull120RadSizeTotal / 120) * wc_rad120mmCost)
+				);
+
+				wc_rad140mmCostTotal = (
+					((wc_oneside140RadSizeTotal / 140) * wc_rad140mmCost) +
+					((wc_pushpull140RadSizeTotal / 140) * wc_rad140mmCost)
+				);
+
+				// Also add 2 fittings for CPU, 2 for pump
+				wc_fittingsAmount += 4;
+
+				wc_fittingsTotalCost = wc_fittingsAmount * wc_fittingsCost;
+
+
+
+				wcSystemCost = wc_cpuCost + wc_pumpCost + wc_tubingCost + wc_fittingsTotalCost + wc_liquidCost + wc_rad120mmCostTotal + wc_rad140mmCostTotal + wc_fan120mmCostTotal + wc_fan140mmCostTotal;
+
+				systemWcCostOutputEl.value = wcSystemCost;
+
+			}
+
+		}
+	</script>
+</body>
+
+</html>
