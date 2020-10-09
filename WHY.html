@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>PC Price Kalkyurator</title>
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
@@ -209,7 +209,7 @@
 			</label>
 
 
-			<div id="wcOptionsContainer" class="hidden-wc">
+			<div id="wc_optionsContainer" class="hidden-wc">
 
 				<label for="wc_cpuCostEl">CPU Block Cost</label>
 				<input id="wc_cpuCostEl" value="80" type="number" class="inputField">
@@ -261,16 +261,26 @@
 
 			</div>
 
+			<div id="nowc_optionsContainer" class="hidden-wc">
+
+				<label for="nowc_coolerCostEl">"Normal" cooler cost</label>
+				<input id="nowc_coolerCostEl" value="80" type="number" class="inputField">
+
+			</div>
+
 
 			<input id="computeCostBtn" type="submit" value="Compute!" class="submitForm">
 
 		</form>
 	</div>
+
 	<label for="systemCostOutputEl">System Cost</label>
 	<input id="systemCostOutputEl" class="inputField" readonly>
 
-	<label for="systemWcCostOutputEl" class="hidden-wc">Watercooling Cost</label>
-	<input id="systemWcCostOutputEl" class="hidden-wc inputField" readonly>
+	<div id="wc_optionsCostOutputContainer" class="hidden-wc">
+		<label for="wc_costOutputEl" value="0248">Watercooling Cost</label>
+		<input id="wc_costOutputEl" class="inputField" readonly>
+	</div>
 
 
 
@@ -289,6 +299,9 @@
 		const caseFan120mmAmountEl = document.getElementById("caseFan120mmAmountEl");
 		const caseFan140mmAmountEl = document.getElementById("caseFan140mmAmountEl");
 
+		const nowc_optionsContainer = document.getElementById("nowc_optionsContainer");
+		const nowc_coolerCostEl = document.getElementById("nowc_coolerCostEl");
+
 
 		// Switch WC
 		const switchWatercoolingSwitch = document.getElementById("switchWatercoolingSwitch");
@@ -304,7 +317,7 @@
 		const wc_rad140mmCostEl = document.getElementById("wc_rad140mmCostEl");
 
 		// WC rad and fan st		let wc_rad140mmCost;uff
-		const wcOptionsContainer = document.getElementById("wcOptionsContainer");
+		const wc_optionsContainer = document.getElementById("wc_optionsContainer");
 
 		const addRadSelectionBtn = document.getElementById("addRadSelectionBtn");
 		const radSelectionSizeEl = document.getElementById("radSelectionSizeEl");
@@ -318,7 +331,8 @@
 
 		// Output
 		const systemCostOutputEl = document.getElementById("systemCostOutputEl");
-		const systemWcCostOutputEl = document.getElementById("systemWcCostOutputEl");
+		const wc_optionsCostOutputContainer = document.getElementById("wc_optionsCostOutputContainer");
+		const wc_costOutputEl = document.getElementById("wc_costOutputEl");
 
 
 
@@ -330,11 +344,14 @@
 			console.log(switchWatercoolingSwitch.checked);
 			if (switchWatercoolingSwitch.checked == true) {
 				isUsingWatercooling = true;
-				systemWcCostOutputEl.classList.remove("hidden-wc");
-				wcOptionsContainer.classList.remove("hidden-wc");
+				wc_optionsContainer.classList.remove("hidden-wc");
+				wc_optionsCostOutputContainer.classList.remove("hidden-wc");
+				nowc_optionsContainer.classList.add("hidden-wc");
 			} else {
-				systemWcCostOutputEl.classList.add("hidden-wc");
-				wcOptionsContainer.classList.add("hidden-wc");
+				isUsingWatercooling = false;
+				wc_optionsContainer.classList.add("hidden-wc");
+				wc_optionsCostOutputContainer.classList.add("hidden-wc");
+				nowc_optionsContainer.classList.remove("hidden-wc");
 			}
 		}
 
@@ -426,7 +443,7 @@
 			removeBtn.onclick = function () {
 				removeRadiatorAsSelected(addedRadiatorOjectIterator);
 			};
-			removeBtn.appendChild(document.createTextNode("removeBtnText"));
+			removeBtn.appendChild(document.createTextNode("Remove ^Radiator"));
 
 			tree.appendChild(radInfo);
 			tree.appendChild(removeBtn);
@@ -520,9 +537,6 @@
 			// Calculate base part prices
 			baseSystemCost = cpuCost + gpuCost + ramCost + moboCost + psuCost + caseCost + caseFanTotalCost;
 
-			// Update UI
-			systemCostOutputEl.value = baseSystemCost;
-
 			if (isUsingWatercooling) {
 				getWcPartInfo();
 
@@ -589,10 +603,16 @@
 
 				wcSystemCost = wc_cpuCost + wc_pumpCost + wc_tubingCost + wc_fittingsTotalCost + wc_liquidCost + wc_rad120mmCostTotal + wc_rad140mmCostTotal + wc_fan120mmCostTotal + wc_fan140mmCostTotal;
 
-				systemWcCostOutputEl.value = wcSystemCost;
+				wc_costOutputEl.value = wcSystemCost;
 
+			} else {
+				// Since not using watercooling, also add non-custom-water-cooling price
+				baseSystemCost += Number(nowc_coolerCostEl.value);
 			}
 
+
+			// Update UI
+			systemCostOutputEl.value = baseSystemCost;
 		}
 	</script>
 </body>
