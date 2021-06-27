@@ -1,10 +1,10 @@
 import { FunctionalComponent, h } from "preact";
-import ThingControllerFunc from "./thingControllerFunc";
+import ThingController from "./thingController";
 
 const App: FunctionalComponent = () => (
 	<div id="preact_root">
 		hello there
-		<ThingControllerFunc elCount="10"/>
+		<ThingController elCount="10"/>
 	</div>
 );
 
