@@ -1,0 +1,9 @@
+{
+	"name": "aterlux-preact",
+	"short_name": "aterlux-preact",
+	"start_url": "/preact/",
+	"display": "standalone",
+	"orientation": "portrait",
+	"background_color": "#fff",
+	"theme_color": "#673ab8",
+}
