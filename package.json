@@ -19,9 +19,11 @@
 		"node-fetch": "^3.0.0",
 		"nunjucks": "^3.2.3",
 		"serve-index": "^1.9.1",
+		"solid-js": "^1.1.1",
 		"ts-loader": "^9.2.5",
 		"ts-node": "^10.2.1",
-		"solid-js": "^1.1.1"
+		"webpack": "^5.51.1",
+		"webpack-cli": "^4.8.0"
 	},
 	"devDependencies": {
 		"@types/supertest": "^2.0.11",
@@ -43,10 +45,12 @@
 		"ts": "node --es-module-specifier-resolution=node --loader ts-node/esm",
 		"js": "node",
 		"meta-server": "nodemon",
-		"phptest": "php ./php/phpinfo.php",
 		"meta-client": "vite",
 		"meta-client_build": "vite build",
-		"meta-client_serve": "vite preview"
+		"meta-client_serve": "vite preview",
+		"phpserver": "php -S localhost:3052 -t ./php/",
+		"tsc-examples": "tsc --project ./examples/tsconfig.json",
+		"webpack-test": "webpack"
 	},
 	"repository": {
 		"type": "git",

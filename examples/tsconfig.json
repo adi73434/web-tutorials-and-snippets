@@ -1,0 +1,31 @@
+{
+	"compilerOptions": {
+		"target": "ES2021",
+		"lib": [
+			"dom",
+			"dom.iterable",
+			"esnext"
+		],
+		"allowJs": true,
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"noFallthroughCasesInSwitch": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": false,
+		"rootDirs": ["proj1", "proj2"],
+	},
+	"references": [{
+		"path": "./proj1/test.ts"
+	}, {
+		"path": "./proj2/test2.ts"
+	}, ]
+	// "include": [
+	// 	"", 
+	// ],
+}
