@@ -23,6 +23,91 @@ playground for:
 This is really a catch-all repository and I think I might keep it on my GitHub instead of GitLab *(ad populum intensifies)*, because so many people use GitHub.
 
 
+## Folders
+
+
+
+### js
+Access (Node.js):
+- `> npm run ts ./js/filename.ts`
+- File extension is required, also use the`ts` command for `.js` files.
+
+Access (meta-client):
+- `> npm run meta-server`
+- `> npm run meta-client`
+- Navigate to the respective file.
+
+
+Standard JavaScript/TypeScript files that can be ran anywhere.
+
+
+
+### js-browser
+Access (meta-client):
+- `> npm run meta-server`
+- `> npm run meta-client`
+- Navigate to the respective file.
+
+
+Behaviour (based on file extension);
+- `html`: You'll be redirected to the HTML file statically and natively, with nothing to do with SolidJS thereafter.
+- `tsx`: You'll see the file loaded as a component into the meta-client. This will then run in the runner frame/component (TBD).
+- `ts`/`js`: These files will [load within the meta-client](https://stackoverflow.com/a/7789831/13310905) onclick, unless they have been specified to rely on a specific context (such as a page like 10minutemail).
+
+
+The scripts within this folder all rely either on a DOM context. The `.html` and `.tsx` files rely on either a HTML or SolidJS context; meanwhile, the `.ts`/`.js` files either rely on a specific page's context, or on *any* arbitrary browser context - check each file for details.
+
+
+
+### js-express-api
+Access:
+- `import x from ""` within meta-server
+- `> npm run meta-server`
+- `curl` your desired API endpoint
+
+
+These are APIs that will be attached to the meta-server, in the URI `/snippet/api/`
+
+
+
+### js-node
+Access (Node.js):
+- `> npm run ts ./js/filename.ts`
+- File extension is required, also use the`ts` command for `.js` files.
+
+
+These scripts rely on a Node.js context.
+
+
+
+### js-nunjucks
+TBD: I was considering making this in the same way `js-express-api` is done, except for views.
+
+
+
+## META
+
+### meta-server
+This is the "META" server that hosts both the browser and static file server for all of the files within this repository, and it enables creating snippets with Express without having to create a new Express app for every snippet - just export the router and import it in the meta-server server file.
+
+
+The static file serving is done using [serve-index](https://github.com/expressjs/serve-index)
+
+
+
+### meta-client
+This is a frontend for this repository (which will be) built using SolidJS.
+
+Here, this will serve the function of providing a nice way to browse the repository, including notes and such.
+
+This was created with `npx degit solidjs/templates/ts meta-client` and merged into the main package.json.
+This still uses vite.
+
+To run this currently requires doing `npm run meta-client_build` and `npm run meta-client_serve`.
+
+
+
+
 
 ## Languages
 

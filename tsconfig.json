@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"target": "es6",
+		"target": "ES2021",
 		"lib": [
 			"dom",
 			"dom.iterable",
@@ -18,7 +18,7 @@
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"noEmit": true,
-		"outDir": "", 
+		"outDir": "",
 		"rootDir": "",
 	},
 	// "include": [
