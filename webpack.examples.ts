@@ -9,37 +9,127 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 // -----------------------------------------------------------------------------
 
-import {readFilesRecursively} from "./js-node/read-files";
+import {readFilesRecursively, getFilenameFromPath, getFolderParentFromPath, removeFilenameFromPath} from "./js-node/files";
 
-// Haha. I'm very stubborn with using ESM, so here goes this mess
-export default (env: any, argv: any) => {
-	readFilesRecursively("./examples", (err: any, res: any) => {
-		console.log(res);
+
+// type projects = {
+// 	// data holds the general project info
+// 	data: Array<projectInfo>,
+// 	// allEntries holds the entries as they shall be given to webpack
+// 	allEntries: Array<projectEntry>
+// }
+
+type projectInfo = {
+	path: string,
+	file: string,
+	pathToLastFolder: string,
+}
+
+type projectEntry = {
+	// The key is not known as it will match the folder name
+	[key: string]: string,
+}
+
+type projects = {
+	data: projectInfo[],
+	allEntries: projectEntry,
+}
+
+const exampleProjects: projects = {
+	// data holds the general project info
+	data: [],
+	// allEntries holds the entries as they shall be given to webpack
+	allEntries: {},
+};
+
+
+
+/**
+ *
+ *
+ * @return {*}  {Promise<any>}
+ */
+const getProjectsData = (): projects => {
+	const allPaths = readFilesRecursively("./examples/");
+
+	// Filter out all paths and make allEntries hold the key->string pair
+	// where the key is the name of the folder containing the index.ts/index.js file
+	allPaths.forEach((fullPath) => {
+		const fileName = getFilenameFromPath(fullPath);
+		if (fileName === undefined) {
+			return;
+		}
+
+		// Get file extension (currently unnecessary)
+		// const fileExtTemp = regFileExtension.exec(fileName);
+		// if (fileExtTemp === null) {
+		// 	return;
+		// }
+		// const fileExt = fileExtTemp[1];
+
+		const pathWithoutFilename = removeFilenameFromPath(fullPath);
+		const secondToLastFolderName = getFolderParentFromPath(pathWithoutFilename, 1);
+
+		// Compile all files within the root of the examples folder
+		if (pathWithoutFilename === "./examples/") {
+			exampleProjects.data.push(
+				{
+					path: fullPath,
+					file: fileName,
+					pathToLastFolder: "asdf",
+				},
+			);
+			exampleProjects.allEntries[pathWithoutFilename] = "./" + fullPath;
+			// exampleProjects.allEntries.push({
+			// [fileName]: fullPath,
+			// });
+		}
+		// Check it's an index.js/ts
+		else if (fileName === "index.ts" || fileName === "index.js") {
+		// return getFilenameFromPath(fullPath);
+		// return filename;
+			exampleProjects.data.push(
+				{
+					path: fullPath,
+					file: fileName,
+					pathToLastFolder: "asdf",
+				},
+			);
+			exampleProjects.allEntries[pathWithoutFilename] = "./" + fullPath;
+			// exampleProjects.allEntries.push({
+			// [secondToLastFolderName]: fullPath,
+			// });"distMulti"
+		}
 	});
 
+	// console.log(exampleProjects);
+
+	// entrypoints = exampleProjects.allEntries;
+	// callbackEntrypoints(exampleProjects.allEntries);
+	// const allEntriesObj = Object.assign({}, exampleProjects.allEntries);
+	return exampleProjects;
+};
+
+// Haha. I'm very stubborn with using ESM, so here goes this mess
+
+
+export default (env: any, argv: any): webpack.Configuration => {
+	const exampleProjects = getProjectsData();
+
 	return {
-		// const config: webpack.Configuration = {
-	// resolve: {
-	// 	alias: {
-	// 		// "p1": path.resolve(__dirname, "./examples/proj1"),
-	// 		// "p2": path.resolve(__dirname, "./examples/proj2"),
-	// 		"./examplos/proj1": "./examples/proj1",
-	// 		"./examplos/proj2": "./examples/proj2",
-	// 	},
-	// },
-	// bundling mode
+		// bundling mode
 		mode: "production",
 
 		// entry files
-		entry: {
-			"proj1": path.resolve(__dirname, "./examples/proj1/test.ts"),
-			"proj2": path.resolve(__dirname, "./examples/proj2/test2.ts"),
+		entry: () => {
+			console.log(exampleProjects.allEntries);
+			return exampleProjects.allEntries;
 		},
 
 		// output bundles (location)
 		output: {
-			path: path.resolve(__dirname, "distMulti" ),
-			filename: "[name].js",
+			path: path.resolve(__dirname),
+			filename: "[name]/build/index.js",
 		},
 
 		// file resolutions

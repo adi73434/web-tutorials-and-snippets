@@ -61,6 +61,10 @@ I need to think of a convenient way of running the php within this folder and co
 
 The current "solution" to compiling TypeScript files in this folder is to run `> npm run tsc ./examples/file.ts`. You need to include the subfolder name even if you're already in that folder because npm runs from the root folder.
 
+Guidelines and TypeScriptCompilation Behaviour:
+- Put any example into its own folder, with an `index.ts` file within it. This is the entry point
+- Wherever there is an index.ts file, it will be compiled into a sibling folder. You can have multiple nested folders like this and it still works.
+- Put any loose scripts inside of the root of `./examples`. Do not put an `index.ts` file here just for clarity, because this does not depend on an entry point.
 
 
 ### frontends

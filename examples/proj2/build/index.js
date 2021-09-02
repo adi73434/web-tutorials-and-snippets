@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log("proj2 index")})();
