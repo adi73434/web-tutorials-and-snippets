@@ -11,13 +11,10 @@ const __dirname = path.dirname(__filename);
 
 import {readFilesRecursively, getFilenameFromPath, getFolderParentFromPath, removeFilenameFromPath} from "./js-node/files";
 
-
-// type projects = {
-// 	// data holds the general project info
-// 	data: Array<projectInfo>,
-// 	// allEntries holds the entries as they shall be given to webpack
-// 	allEntries: Array<projectEntry>
-// }
+type projects = {
+	data: projectInfo[],
+	allEntries: projectEntry,
+}
 
 type projectInfo = {
 	path: string,
@@ -30,26 +27,24 @@ type projectEntry = {
 	[key: string]: string,
 }
 
-type projects = {
-	data: projectInfo[],
-	allEntries: projectEntry,
-}
 
-const exampleProjects: projects = {
-	// data holds the general project info
-	data: [],
-	// allEntries holds the entries as they shall be given to webpack
-	allEntries: {},
-};
 
 
 
 /**
- *
+ * Get the project data of all the projects within ./examples/ directory, with index.ts/index.js
+ * acting as the entrypoint.
  *
  * @return {*}  {Promise<any>}
  */
 const getProjectsData = (): projects => {
+	const exampleProjects: projects = {
+		// data holds the general project info
+		data: [],
+		// allEntries holds the entries as they shall be given to webpack
+		allEntries: {},
+	};
+
 	const allPaths = readFilesRecursively("./examples/");
 
 	// Filter out all paths and make allEntries hold the key->string pair
@@ -70,6 +65,11 @@ const getProjectsData = (): projects => {
 		const pathWithoutFilename = removeFilenameFromPath(fullPath);
 		const secondToLastFolderName = getFolderParentFromPath(pathWithoutFilename, 1);
 
+		// Ignore existing build folders otherwise you'd be building built files
+		if (secondToLastFolderName === "build") {
+			return;
+		}
+
 		// Compile all files within the root of the examples folder
 		if (pathWithoutFilename === "./examples/") {
 			exampleProjects.data.push(
@@ -80,14 +80,9 @@ const getProjectsData = (): projects => {
 				},
 			);
 			exampleProjects.allEntries[pathWithoutFilename] = "./" + fullPath;
-			// exampleProjects.allEntries.push({
-			// [fileName]: fullPath,
-			// });
 		}
 		// Check it's an index.js/ts
 		else if (fileName === "index.ts" || fileName === "index.js") {
-		// return getFilenameFromPath(fullPath);
-		// return filename;
 			exampleProjects.data.push(
 				{
 					path: fullPath,
@@ -96,23 +91,18 @@ const getProjectsData = (): projects => {
 				},
 			);
 			exampleProjects.allEntries[pathWithoutFilename] = "./" + fullPath;
-			// exampleProjects.allEntries.push({
-			// [secondToLastFolderName]: fullPath,
-			// });"distMulti"
 		}
 	});
-
-	// console.log(exampleProjects);
-
-	// entrypoints = exampleProjects.allEntries;
-	// callbackEntrypoints(exampleProjects.allEntries);
-	// const allEntriesObj = Object.assign({}, exampleProjects.allEntries);
 	return exampleProjects;
 };
 
-// Haha. I'm very stubborn with using ESM, so here goes this mess
 
 
+// -----------------------------------------------------------------------------
+// Check these
+// https://stackoverflow.com/a/38132106/13310905
+// https://stackoverflow.com/a/43689505/13310905
+// -----------------------------------------------------------------------------
 export default (env: any, argv: any): webpack.Configuration => {
 	const exampleProjects = getProjectsData();
 
@@ -149,39 +139,3 @@ export default (env: any, argv: any): webpack.Configuration => {
 		},
 	};
 };
-// export default config;
-
-// const fooConfig = Object.assign({}, defaultConfig, {
-// 	name: "a",
-// 	entry: "./examples/proj1",
-// 	output: {
-// 		path: path.resolve( __dirname, "examples/proj1/dist"),
-// 		filename: "bundle.js",
-// 	},
-// });
-// const barConfig = Object.assign({}, defaultConfig, {
-// 	name: "b",
-// 	entry: "./examples/proj2",
-// 	output: {
-// 		path: path.resolve( __dirname, "examples/proj2/dist"),
-// 		filename: "bundle.js",
-// 	},
-// });
-
-// export default (env, argv) => {
-// 	const asdf = {};
-// 	Object.assign(asdf, defaultConfig, {
-// 		name: "a",
-// 		entry: "./examples/proj1",
-// 		output: {
-// 			path: path.resolve( __dirname, "examples/proj1/dist"),
-// 			filename: "bundle.js",
-// 		},
-// 	});
-// 	return asdf;
-// };
-
-
-// export default {
-// 	fooConfig, barConfig,
-// };

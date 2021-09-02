@@ -1,1 +1,1 @@
-(()=>{"use strict";console.log("proj1 index")})();
+(()=>{"use strict";console.log("proj1 index... with some changes")})();
