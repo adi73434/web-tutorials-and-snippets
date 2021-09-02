@@ -1,4 +1,6 @@
 import path from "path";
+import fs from "fs";
+import webpack from "webpack";
 
 // -----------------------------------------------------------------------------
 // Dirname stuff
@@ -7,10 +9,16 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 // -----------------------------------------------------------------------------
 
+import {readFilesRecursively} from "./js-node/read-files";
 
 // Haha. I'm very stubborn with using ESM, so here goes this mess
-export default (env, argv) => {
+export default (env: any, argv: any) => {
+	readFilesRecursively("./examples", (err: any, res: any) => {
+		console.log(res);
+	});
+
 	return {
+		// const config: webpack.Configuration = {
 	// resolve: {
 	// 	alias: {
 	// 		// "p1": path.resolve(__dirname, "./examples/proj1"),
@@ -24,16 +32,14 @@ export default (env, argv) => {
 
 		// entry files
 		entry: {
-			app: [
-				path.resolve(__dirname, "./examples/proj1/test.ts"),
-				path.resolve(__dirname, "./examples/proj2/test2.ts"),
-			],
+			"proj1": path.resolve(__dirname, "./examples/proj1/test.ts"),
+			"proj2": path.resolve(__dirname, "./examples/proj2/test2.ts"),
 		},
 
 		// output bundles (location)
 		output: {
-			path: path.join(__dirname, "distMulti" ),
-			filename: "main.js",
+			path: path.resolve(__dirname, "distMulti" ),
+			filename: "[name].js",
 		},
 
 		// file resolutions
@@ -53,6 +59,7 @@ export default (env, argv) => {
 		},
 	};
 };
+// export default config;
 
 // const fooConfig = Object.assign({}, defaultConfig, {
 // 	name: "a",
