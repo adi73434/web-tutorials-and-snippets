@@ -1,56 +1,56 @@
 * {
-  margin: 0;
-  padding: 0;
-  transition: 1s;
+	padding: 0;
+	margin: 0;
+	transition: 1s;
 }
 
 html {
-  scroll-behavior: smooth;
-  font-family: "Kanit", sans-serif;
-  font-size: 3em;
+	font-family: "Kanit", sans-serif;
+	font-size: 3em;
+	scroll-behavior: smooth;
 }
 
 .snap-parent {
-  width: 100vw;
-  height: 100vh;
-  overflow: scroll;
-  scroll-snap-points-y: repeat(100vh);
-  scroll-snap-type: y mandatory;
+	overflow: scroll;
+	width: 100vw;
+	height: 100vh;
+	scroll-snap-points-y: repeat(100vh);
+	scroll-snap-type: y mandatory;
 }
 
 section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  height: 100vh;
-  scroll-snap-align: start;
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	align-items: center;
+	justify-content: center;
+	scroll-snap-align: start;
 }
 
 section.sec-purpol {
-  background: #7d147d;
+	background: #7d147d;
 }
 
 section.sec-fucksia {
-  background: #961464;
+	background: #961464;
 }
 
 section.sec-grehn {
-  background: #149664;
+	background: #149664;
 }
 
 section.sec-mono {
-  background: #161616;
+	background: #161616;
 }
 
-section > p {
-  margin: 0px;
-  padding: 20px;
-  color: gainsboro;
-  cursor: pointer;
+section>p {
+	padding: 20px;
+	margin: 0px;
+	color: gainsboro;
+	cursor: pointer;
 }
 
-section > p:hover {
-  color: cyan;
-  cursor: pointer;
+section>p:hover {
+	color: cyan;
+	cursor: pointer;
 }

@@ -1,29 +1,29 @@
 *
-    margin: 0
     padding: 0
+    margin: 0
     transition: 1s
 
 
 html
-    scroll-behavior: smooth
     font-family: 'Kanit', sans-serif
     font-size: 3em
+    scroll-behavior: smooth
 
 
 .snap-parent
+    overflow: scroll
     width: 100vw
     height: 100vh
-    overflow: scroll
     scroll-snap-points-y: repeat(100vh)
     scroll-snap-type: y mandatory
 
 
 section
     display: flex
-    align-items: center
-    justify-content: center
     width: 100vw
     height: 100vh
+    align-items: center
+    justify-content: center
     scroll-snap-align: start
 
 
@@ -37,8 +37,8 @@ section.sec-mono
     background: rgb(22, 22, 22)
 
 section > p
-    margin: 0px
     padding: 20px
+    margin: 0px
     color: rgb(220, 220, 220)
     cursor: pointer
 

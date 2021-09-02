@@ -20,31 +20,31 @@
 		}
 
 		.switch input {
-			opacity: 0;
 			width: 0;
 			height: 0;
+			opacity: 0;
 		}
 
 		.slider {
 			position: absolute;
-			cursor: pointer;
 			top: 0;
-			left: 0;
 			right: 0;
 			bottom: 0;
+			left: 0;
 			background-color: #ccc;
+			cursor: pointer;
 			-webkit-transition: .4s;
 			transition: .4s;
 		}
 
 		.slider:before {
 			position: absolute;
-			content: "";
-			height: 26px;
-			width: 26px;
-			left: 4px;
 			bottom: 4px;
+			left: 4px;
+			width: 26px;
+			height: 26px;
 			background-color: white;
+			content: "";
 			-webkit-transition: .4s;
 			transition: .4s;
 		}
@@ -75,30 +75,30 @@
 
 
 		.default-button {
-			background-color: #dd187a;
-			border: none;
-			color: white;
+			display: inline-block;
 			padding: 15px 32px;
+			border: none;
+			margin: 4px 2px;
+			background-color: #dd187a;
+			color: white;
+			cursor: pointer;
+			font-size: 16px;
 			text-align: center;
 			text-decoration: none;
-			display: inline-block;
-			font-size: 16px;
-			margin: 4px 2px;
-			cursor: pointer;
 			transition-duration: 0.2s;
 		}
 
 		.default-button-small {
-			background-color: #dd187a;
-			border: none;
-			color: white;
+			display: inline-block;
 			padding: 3px 5px;
+			border: none;
+			margin: 4px 2px;
+			background-color: #dd187a;
+			color: white;
+			cursor: pointer;
+			font-size: 12px;
 			text-align: center;
 			text-decoration: none;
-			display: inline-block;
-			font-size: 12px;
-			margin: 4px 2px;
-			cursor: pointer;
 			transition-duration: 0.2s;
 		}
 
@@ -110,20 +110,20 @@
 
 
 		.formContainer {
-			border-radius: 5px;
-			background-color: #f2f2f2;
 			padding: 20px;
+			background-color: #f2f2f2;
+			border-radius: 5px;
 		}
 
 		.inputField,
 		.inputSelect {
-			width: 100%;
-			padding: 12px 20px;
-			margin: 8px 0;
 			display: inline-block;
-			border: 1px solid #ccc;
-			border-radius: 4px;
+			width: 100%;
 			box-sizing: border-box;
+			padding: 12px 20px;
+			border: 1px solid #ccc;
+			margin: 8px 0;
+			border-radius: 4px;
 		}
 
 		.smallWidth {
@@ -132,12 +132,12 @@
 
 		.submitForm {
 			width: 100%;
-			background-color: #dd187a;
-			color: white;
 			padding: 14px 20px;
-			margin: 8px 0;
 			border: none;
+			margin: 8px 0;
+			background-color: #dd187a;
 			border-radius: 4px;
+			color: white;
 			cursor: pointer;
 			transition-duration: 0.2s;
 		}
@@ -156,6 +156,7 @@
 
 			display: none;
 		}
+
 	</style>
 </head>
 
@@ -190,14 +191,14 @@
 
 			<label for="fan120mmCostEl">120mm fan cost</label>
 			<input id="fan120mmCostEl" value="15" type="number" class="inputField">
-			
+
 			<label for="fan140mmCostEl">140mm fan cost</label>
 			<input id="fan140mmCostEl" value="18" type="number" class="inputField">
 
 
 			<label for="caseFan120mmAmountEl">Number of 120mm case fans</label>
 			<input id="caseFan120mmAmountEl" value="4" type="number" class="inputField">
-			
+
 			<label for="caseFan140mmAmountEl">Number of 140mm case fans</label>
 			<input id="caseFan140mmAmountEl" value="2" type="number" class="inputField">
 
@@ -229,10 +230,10 @@
 
 				<label for="wc_liquidCostEl">Liquid Cost</label>
 				<input id="wc_liquidCostEl" value="15" type="number" class="inputField">
-				
+
 				<label for="wc_rad120mmCostEl">Cost of 120mm rad</label>
 				<input id="wc_rad120mmCostEl" value="50" type="number" class="inputField">
-				
+
 				<label for="wc_rad140mmCostEl">Cost of 140mm rad</label>
 				<input id="wc_rad140mmCostEl" value="60" type="number" class="inputField">
 
@@ -460,9 +461,9 @@
 				pushpull: radSelectionFanEl.value
 			};
 			arrayOfAddedRadiatorObjects.push(newRadiatorObject);
-			
+
 			renderNewlyAddedRadiator();
-			
+
 			// Make the next ID the latest, and use that to track the next object
 			addedRadiatorOjectIterator++;
 		}
@@ -506,7 +507,7 @@
 			fan140mmCost = Number(fan140mmCostEl.value);
 			caseFan120mmAmount = Number(caseFan120mmAmountEl.value);
 			caseFan140mmAmount = Number(caseFan140mmAmountEl.value);
-			
+
 			caseFanTotalCost = ((caseFan120mmAmount * fan120mmCost) + caseFan140mmAmount * fan140mmCost);
 		};
 
@@ -585,7 +586,7 @@
 
 				// 
 				wc_rad120mmCostTotal = (
-					((wc_oneside120RadSizeTotal / 120) * wc_rad120mmCost) + 
+					((wc_oneside120RadSizeTotal / 120) * wc_rad120mmCost) +
 					((wc_pushpull120RadSizeTotal / 120) * wc_rad120mmCost)
 				);
 
@@ -601,7 +602,8 @@
 
 
 
-				wcSystemCost = wc_cpuCost + wc_pumpCost + wc_tubingCost + wc_fittingsTotalCost + wc_liquidCost + wc_rad120mmCostTotal + wc_rad140mmCostTotal + wc_fan120mmCostTotal + wc_fan140mmCostTotal;
+				wcSystemCost = wc_cpuCost + wc_pumpCost + wc_tubingCost + wc_fittingsTotalCost + wc_liquidCost +
+					wc_rad120mmCostTotal + wc_rad140mmCostTotal + wc_fan120mmCostTotal + wc_fan140mmCostTotal;
 
 				wc_costOutputEl.value = wcSystemCost;
 
@@ -614,6 +616,7 @@
 			// Update UI
 			systemCostOutputEl.value = baseSystemCost;
 		}
+
 	</script>
 </body>
 
