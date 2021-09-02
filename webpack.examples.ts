@@ -29,8 +29,6 @@ type projectEntry = {
 
 
 
-
-
 /**
  * Get the project data of all the projects within ./examples/ directory, with index.ts/index.js
  * acting as the entrypoint.
