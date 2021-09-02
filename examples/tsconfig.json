@@ -18,14 +18,5 @@
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"noEmit": false,
-		"rootDirs": ["proj1", "proj2"],
 	},
-	"references": [{
-		"path": "./proj1/test.ts"
-	}, {
-		"path": "./proj2/test2.ts"
-	}, ]
-	// "include": [
-	// 	"", 
-	// ],
 }
