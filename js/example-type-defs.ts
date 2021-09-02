@@ -139,8 +139,8 @@ players.forEach((player) => {
 
 
 // Replace first player's veryCoolSwords with superCoolSwords
-console.log("First player details: ");
-console.table(players[0]);
+console.log("First player item details: ");
+console.table(players[0].items);
 
 players[0].items.forEach((item, index) => {
 	// With the enum we can easily check something without having to guess, because this will ONLY
@@ -151,7 +151,7 @@ players[0].items.forEach((item, index) => {
 });
 
 console.log("Replaced first player's veryCoolSwords with superCoolSwords");
-console.table(players[0]);
+console.table(players[0].items);
 
 
 
@@ -177,5 +177,41 @@ players.forEach((player) => {
 	});
 	console.log("\r\n");
 });
+
+
+
+/**
+ *
+ *
+ * @param {string} name
+ * @param {number} [wow]
+ */
+function somethingCool(name: string, wow?: number) {
+	console.log(name);
+	console.log(wow);
+}
+
+/**
+ *
+ *
+ * @param {string} name
+ * @param {number} wow
+ */
+function somethingNotAsCool(name: string, wow: number) {
+	console.log(name);
+	console.log(wow);
+}
+
+somethingCool("asdf");
+somethingCool("asdf", 123);
+
+
+
+
+
+somethingNotAsCool("asdf");
+somethingNotAsCool("asdf", 123);
+
+
 
 export {};
