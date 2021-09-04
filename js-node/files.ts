@@ -5,17 +5,23 @@ import path from "path";
 
 
 /**
+ * Get the filename from a string matching either Linux or Windows
+ * directory paths.
  *
- *
+ * @todo Make this take an override for path separator; the string provided may not
+ * necessarily match the type of the host system.
  * @param {string} str
  * @return {*}  {string}
  */
 const getFilenameFromPath = (str: string): string | undefined => {
+	// -------------------------------------------------------------------------
+	// TODO:
 	// See: https://stackoverflow.com/a/25221100/13310905
 	// See: https://stackoverflow.com/a/25221100/13310905
 	// See: https://stackoverflow.com/a/25221100/13310905
 	// See: https://stackoverflow.com/a/25221100/13310905
 	// See: https://stackoverflow.com/a/25221100/13310905
+	// -------------------------------------------------------------------------
 	const a = str.split(path.sep).pop();
 	// This done here cause "object is possible undefined"
 	return a !== undefined ? a.split(path.sep).pop() : undefined;
@@ -31,6 +37,8 @@ const getFilenameFromPath = (str: string): string | undefined => {
  *
  * By default gets the last folder in the path
  *
+ * @todo Make this take an override for path separator; the string provided may not
+ * necessarily match the type of the host system.
  * @param {string} str
  * @param {number} [folderOffset=1]
  * @return {*}  {string}
@@ -44,15 +52,15 @@ const getFolderParentFromPath = (str: string, folderOffset = 1): string => {
 
 
 /**
+ * Remove the filename from the provided path, either with Linux or Windows path
+ * syntax (based on current platform.
  *
- *
+ * @todo Make this take an override for path separator; the string provided may not
+ * necessarily match the type of the host system.
  * @param {string} str
  * @return {*}  {string}
  */
 const removeFilenameFromPath = (str: string): string => {
-	// -------------------------------------------------------------------------
-	// FIXME: This requires \\ on Windows but I'm not sure if this works with \\ on Linux
-	// -------------------------------------------------------------------------
 	// See: https://stackoverflow.com/a/31848508
 	return str.substring(0, str.lastIndexOf(path.sep));
 };
@@ -64,17 +72,21 @@ const removeFilenameFromPath = (str: string): string => {
 /**
  * Read all files recursively
  *
+ * @todo Make this take an override for path separator; the string provided may not
+ * necessarily match the type of the host system.
  * @param {*} src
  * @param {*} callback
  */
 const readFilesRecursivelyCb = (src: any, callback: any) => {
+	// Equivalent of src + "/**/*"" on Linux
 	glob(`${src} + ${path.sep}**${path.sep}*`, callback);
 };
 
 
 
 /**
- *
+ * Read all files recursively in the provided directory and return
+ * an array of the full paths.
  *
  * @param {string} dir
  * @return {*}  {string[]}
@@ -101,15 +113,12 @@ const readFilesRecursively = (dir: string): string[] => {
 
 
 
-// fs.readdir("./examples", (err, files) => {
-// 	files.forEach((file) => {
-// 		console.log(file);
-// 	});
-// });
-
-
-
+// FIXME: This might need to be made universal accross Windows/Linux,
+// as I had to do with the other file stuff.
+// See: path.sep
+// See: https://stackoverflow.com/a/31848508
 const regFileExtension = /(?:\.([^.]+))?$/;
+
 
 
 export {
