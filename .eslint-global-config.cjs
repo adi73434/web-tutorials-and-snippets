@@ -110,7 +110,7 @@ module.exports = {
 		// Linebreak using Windows \r\n instead of the Unix \n
 		"linebreak-style": [
 			"error",
-			"unix",
+			"windows",
 		],
 
 		// ---------------------------------------------------------------------

@@ -16,9 +16,9 @@ const getFilenameFromPath = (str: string): string | undefined => {
 	// See: https://stackoverflow.com/a/25221100/13310905
 	// See: https://stackoverflow.com/a/25221100/13310905
 	// See: https://stackoverflow.com/a/25221100/13310905
-	const a = str.split("\\").pop();
+	const a = str.split(path.sep).pop();
 	// This done here cause "object is possible undefined"
-	return a !== undefined ? a.split("/").pop() : undefined;
+	return a !== undefined ? a.split(path.sep).pop() : undefined;
 };
 
 
@@ -36,7 +36,7 @@ const getFilenameFromPath = (str: string): string | undefined => {
  * @return {*}  {string}
  */
 const getFolderParentFromPath = (str: string, folderOffset = 1): string => {
-	const split = str.split("/");
+	const split = str.split(path.sep);
 
 	return split[split.length - folderOffset];
 };
@@ -50,7 +50,11 @@ const getFolderParentFromPath = (str: string, folderOffset = 1): string => {
  * @return {*}  {string}
  */
 const removeFilenameFromPath = (str: string): string => {
-	return str.substring(0, str.lastIndexOf("/"));
+	// -------------------------------------------------------------------------
+	// FIXME: This requires \\ on Windows but I'm not sure if this works with \\ on Linux
+	// -------------------------------------------------------------------------
+	// See: https://stackoverflow.com/a/31848508
+	return str.substring(0, str.lastIndexOf(path.sep));
 };
 
 
@@ -64,7 +68,7 @@ const removeFilenameFromPath = (str: string): string => {
  * @param {*} callback
  */
 const readFilesRecursivelyCb = (src: any, callback: any) => {
-	glob(src + "/**/*", callback);
+	glob(`${src} + ${path.sep}**${path.sep}*`, callback);
 };
 
 
