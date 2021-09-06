@@ -208,8 +208,8 @@ somethingCool("asdf", 123);
 
 
 
-
-somethingNotAsCool("asdf");
+// NOTE: This produces an error
+// somethingNotAsCool("asdf");
 somethingNotAsCool("asdf", 123);
 
 

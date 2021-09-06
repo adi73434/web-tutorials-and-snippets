@@ -43,7 +43,7 @@
 		"ts-loader": "^9.2.5",
 		"ts-node": "^10.2.1",
 		"typedoc": "^0.21.9",
-		"typedoc-neo-theme": "^1.1.1",
+		"typedoc-theme-dark": "^0.0.5",
 		"typescript": "^4.4.2",
 		"vite": "^2.5.1",
 		"vite-plugin-solid": "^2.0.3",
@@ -60,8 +60,7 @@
 		"meta-client_serve": "vite preview",
 		"phpserver": "php -S localhost:3052 -t ./php/",
 		"webpack-examples": "node --es-module-specifier-resolution=node --loader ts-node/esm node_modules/webpack-cli/bin/cli.js --config webpack.examples.ts --mode production",
-		"typedoc": "typedoc --tsconfig tsconfig.json --entryPoints meta-server/server.ts",
-		"tsc": "tsc"
+		"typedoc": "typedoc"
 	},
 	"repository": {
 		"type": "git",

@@ -21,10 +21,15 @@
 		"outDir": "",
 		"rootDir": "",
 	},
-	// "exclude": [
-	// 	"./webpack.config.ts"
-	// ]
 	"include": [
-		"./js-node/*.ts",
+		"./examples/**/*.ts",
+		"./js/**/*.ts",
+		"./js-browser/**/*.ts",
+		"./js-express-api/**/*.ts",
+		"./js-node/**/*.ts",
+		"./meta-client/**/*.ts"
 	],
+	"exclude": [
+		"./js/nocompile*.ts"
+	]
 }

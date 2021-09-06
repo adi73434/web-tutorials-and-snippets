@@ -21,7 +21,7 @@ async function main() {
 	app.bootstrap({
 
 		// typedoc options here
-
+		// theme: "./node_modules/typedoc-theme-dark/dist/dark/",
 		// entryPoints: ["js-node/entry.ts"],
 		// tsconfig: "tsconfig.json",
 		// exclude: ["./comparisons"],

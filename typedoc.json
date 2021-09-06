@@ -1,4 +1,12 @@
 {
-	"entryPoints": ["js-node/entry.ts"],
-	"out": "doc"
+	"entryPoints": [
+		"./examples/",
+		"./js/",
+		"./js-browser/",
+		"./js-express-api/",
+		"./js-node/",
+		"./meta-client/"
+	],
+	"theme": "./node_modules/typedoc-theme-dark/dist/dark/",
+	"out": "docs"
 }

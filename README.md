@@ -110,6 +110,8 @@ Access (meta-client):
 
 Standard JavaScript/TypeScript files that can be ran anywhere.
 
+Some of these files will have intentional errors; these are either going to be commented out, or the filename will have an `nocompile` prefix, to allow `> tsc` to run ([see typedoc-tsc](#typedoc-tsc)).
+
 
 
 ### js-browser
@@ -217,3 +219,27 @@ The user syntax is as such:
 
 and the actually-ran command is:
 - `> node --es-module-specifier-resolution=node --loader ts-node/esm ./loop-fetch-async.ts`, or some variant with strings surrounding the path.
+
+
+
+## Documentation
+
+
+
+### Doxygen
+
+
+
+### TypeDoc
+- https://typedoc.org/
+- For consideration: https://typedoc.org/guides/installation/#node-module
+- https://npm.io/package/typedoc-theme-dark
+
+
+
+#### typedoc-tsc
+To run TypeDoc, `> tsc` must run without errors.
+
+Some files intentionally have errors and thus cannot be compiled when the `> tsc` command is invoked.
+
+As such, the files that intentionally have errors are omitted in the main `tsconfig.json` via the `nocompile` prefix.

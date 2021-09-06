@@ -7,7 +7,6 @@
 	<meta name="description" content="Documentation for web-tutorials-and-snippets">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
-	<script async src="assets/js/search.js" id="search-script"></script>
 </head>
 <body>
 <header>
@@ -41,6 +40,8 @@
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
 							<input type="checkbox" id="tsd-filter-externals" checked />
 							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -50,6 +51,11 @@
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="modules.html">Globals</a>
+				</li>
+			</ul>
 			<h1>web-tutorials-and-snippets</h1>
 		</div>
 	</div>
@@ -156,6 +162,7 @@
 					<li>Navigate to the respective file.</li>
 				</ul>
 				<p>Standard JavaScript/TypeScript files that can be ran anywhere.</p>
+				<p>Some of these files will have intentional errors; these are either going to be commented out, or the filename will have an <code>nocompile</code> prefix, to allow <code>&gt; tsc</code> to run (<a href="#typedoc-tsc">see typedoc-tsc</a>).</p>
 				<a href="#js-browser" id="js-browser" style="color: inherit; text-decoration: none;">
 					<h3>js-browser</h3>
 				</a>
@@ -253,21 +260,53 @@ Access (PHP cli):
 				<ul>
 					<li><code>&gt; node --es-module-specifier-resolution=node --loader ts-node/esm ./loop-fetch-async.ts</code>, or some variant with strings surrounding the path.</li>
 				</ul>
+				<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
+					<h2>Documentation</h2>
+				</a>
+				<a href="#doxygen" id="doxygen" style="color: inherit; text-decoration: none;">
+					<h3>Doxygen</h3>
+				</a>
+				<a href="#typedoc" id="typedoc" style="color: inherit; text-decoration: none;">
+					<h3>TypeDoc</h3>
+				</a>
+				<ul>
+					<li><a href="https://typedoc.org/">https://typedoc.org/</a></li>
+					<li>For consideration: <a href="https://typedoc.org/guides/installation/#node-module">https://typedoc.org/guides/installation/#node-module</a></li>
+					<li><a href="https://npm.io/package/typedoc-theme-dark">https://npm.io/package/typedoc-theme-dark</a></li>
+				</ul>
+				<a href="#typedoc-tsc" id="typedoc-tsc" style="color: inherit; text-decoration: none;">
+					<h4>typedoc-tsc</h4>
+				</a>
+				<p>To run TypeDoc, <code>&gt; tsc</code> must run without errors.</p>
+				<p>Some files intentionally have errors and thus cannot be compiled when the <code>&gt; tsc</code> command is invoked.</p>
+				<p>As such, the files that intentionally have errors are omitted in the main <code>tsconfig.json</code> via the <code>nocompile</code> prefix.</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
 					<li class=" ">
-						<a href="modules.html">Exports</a>
+						<a href="modules.html">Modules</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/examples_proj2_test2.html">examples/proj2/test2</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/js_node_dbconn.html">js-<wbr>node/dbconn</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/js_node_entry.html">js-<wbr>node/entry</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/js_node_files.html">js-<wbr>node/files</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/js_chalk_colours.html">js/chalk-<wbr>colours</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-function">
-						<a href="modules.html#araara" class="tsd-kind-icon">araara</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
@@ -277,6 +316,10 @@ Access (PHP cli):
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+			</ul>
 		</div>
 	</div>
 </footer>
@@ -285,5 +328,6 @@ Access (PHP cli):
 </div>
 <div class="overlay"></div>
 <script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>
