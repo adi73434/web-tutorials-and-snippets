@@ -237,6 +237,21 @@ and the actually-ran command is:
 
 
 
+#### Module Grouping
+The documentation is compiled with many "entry points" - because all the scripts live loosely and there is no main project where everything is referenced - and this causes all the "Modules" in TypeDoc to display with one long illogical list.
+
+
+Look into [typedoc-plugin-external-module-name](https://github.com/christopherthielen/typedoc-plugin-external-module-name) to group modules.
+
+Notes;
+- I think `> npm install --force --save-dev typedoc-plugin-external-module-name` is required because there was a dependency resolution error because it relies on a too-old verison of TypeScript.
+- Couldn't get this working in the few minutes I had spare
+- https://www.npmjs.com/package/typedoc-plugin-external-module-name
+- https://github.com/christopherthielen/typedoc-plugin-external-module-name
+
+
+
+
 #### typedoc-tsc
 To run TypeDoc, `> tsc` must run without errors.
 
