@@ -1,4 +1,0 @@
-
-> web-tutorials-and-snippets@1.0.0 webpack-examples /mnt/d/Productivity NVMe/__Git/_Web/web-tutorials-and-snippets
-> node --es-module-specifier-resolution=node --loader ts-node/esm node_modules/.bin/webpack-cli --config webpack.examples.ts --mode production
-

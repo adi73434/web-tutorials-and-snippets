@@ -1,0 +1,4 @@
+{
+	"entryPoints": ["js-node/entry.ts"],
+	"out": "doc"
+}

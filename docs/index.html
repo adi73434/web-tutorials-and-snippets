@@ -1,0 +1,289 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>web-tutorials-and-snippets</title>
+	<meta name="description" content="Documentation for web-tutorials-and-snippets">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">web-tutorials-and-snippets</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>web-tutorials-and-snippets</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#wip" id="wip" style="color: inherit; text-decoration: none;">
+					<h1>WIP!</h1>
+				</a>
+				<p><em><strong>THIS FILE NOT REPRESENTATIVE OF CURRENT STATE OF AFFAIRS WITHIN THE WARZONE OF THIS REPOSITORY</strong></em></p>
+				<p>I&#39;ve decided to give attention to this repo... now it is the &quot;oh fuck me&quot; monorepo of your nightmares</p>
+				<p>It&#39;ll become a</p>
+				<ul>
+					<li>Node.js and Browser JS;</li>
+					<li>PHP;</li>
+					<li>HTML;</li>
+					<li>CSS and SCSS;</li>
+					<li>and whatever-else</li>
+				</ul>
+				<p>playground for:</p>
+				<ul>
+					<li>non-major scripts;</li>
+					<li>snippets;</li>
+					<li>tutorials;</li>
+					<li>comparisons;</li>
+					<li>examples;</li>
+					<li>and really just about anything.</li>
+				</ul>
+				<p>This is really a catch-all repository and I think I might keep it on my GitHub instead of GitLab <em>(ad populum intensifies)</em>, because so many people use GitHub.</p>
+				<p>I&#39;m also considering some cursed stuff like a C++ Lithium server thing, alongside the other server solutions, but using <a href="https://www.npmjs.com/package/cmake-js">cmake-js</a>.</p>
+				<a href="#who-this-is-for" id="who-this-is-for" style="color: inherit; text-decoration: none;">
+					<h2>Who this is for</h2>
+				</a>
+				<p>Myself, students, people who haven&#39;t yet learned better, and my friends so I can maintain a supposition that I know what I&#39;m doing.</p>
+				<p>Prior to the idea of integrating scripts together into the meta setup and overcomplicating everythin, this repository was just an almost-abandoned dump of rather inane scripts. Though, between the stage where I thought &quot;I&#39;ll clean this mess up&quot; and &quot;I&#39;ll integrate everything together&quot; (make it a different, more complicated, kind of mess), I actually thought I could make this repository useful for students. </p>
+				<p>This is to say, students for whom showing a more &quot;modern&quot; way of doing things, compared to what I studied and was recommended on my course, could be beneficial  in terms of what they can learn during university and where they can get employed.</p>
+				<a href="#motivation" id="motivation" style="color: inherit; text-decoration: none;">
+					<h2>Motivation</h2>
+				</a>
+				<p>I wanted a place to put all my HTML, CSS, JavaScript, and related library snippets. I also thought &quot;what could be a cool way to make this whole thing more interactive&quot;, which lead to the meta-client idea. This runs on SolidJS because I came to like the idea of compiling away the need for a runtime library; even <a href="https://github.com/halfnelson/svelte-it-will-scale">Svelte</a>, which apparently doesn&#39;t scale well with a large number of components, has a high inflection point compared to React, and SolidJS has phenomenal performance, <a href="https://krausest.github.io/js-framework-benchmark/2021/table_chrome_93.0.4577.63.html">at least based on these snythetics</a>.</p>
+				<p>Additionally, since I presumed that I&#39;ll be writing a non-zero amount of snippets for Node.js/Express, I decided to create a meta-server to which API routes should be attached (based on the folder name in <code>./js-express-api</code>).</p>
+				<a href="#ports-and-commands" id="ports-and-commands" style="color: inherit; text-decoration: none;">
+					<h2>Ports and Commands</h2>
+				</a>
+				<p>All &quot;client side&quot; stuff shall live on port <code>301x</code> and up, whereas all &quot;server side&quot; stuff shall live on port <code>305x</code> and up. The &quot;source of truth&quot; for these ports will be the <code>.env</code> file, but currently nothing is really set up.</p>
+				<p>Clients:</p>
+				<ul>
+					<li><code>3011</code>: <code>&gt; npm run meta-client_serve</code>: Vite -&gt; SolidJS (meta-client)</li>
+					<li><code>3012</code>: <code>&gt; npm run reactjs</code>: Webpack (probably) -&gt; ReactJS (frontends) <strong>(TBD)</strong></li>
+					<li><code>3013</code>: <code>&gt; npm run sveltejs</code>: Webpack (probably) -&gt; SvelteJS (frontends) <strong>(TBD)</strong></li>
+					<li><code>3014</code>: <code>&gt; npm run vuejs</code>: Webpack (probably) -&gt; VueJS (frontends) <strong>(TBD)</strong></li>
+					<li><code>3015</code>: <code>&gt; npm run angular</code>: Webpack (probably) -&gt; Angular (frontends) <strong>(TBD)</strong></li>
+					<li><code>3016</code>: <code>&gt; npm run angularjs1x</code>: Webpack (probably) -&gt; AngularJS (frontends) <strong>(TBD)</strong></li>
+				</ul>
+				<p>Servers:</p>
+				<ul>
+					<li><code>3051</code>: <code>&gt; npm run meta-server</code>: Node.js -&gt; Express</li>
+					<li><code>3052</code>: <code>&gt; npm run phpserver</code>: PHP Dev Server</li>
+				</ul>
+				<a href="#folders" id="folders" style="color: inherit; text-decoration: none;">
+					<h2>Folders</h2>
+				</a>
+				<a href="#comparisons" id="comparisons" style="color: inherit; text-decoration: none;">
+					<h3>comparisons</h3>
+				</a>
+				<p>This is a folder which contains some comparisons which are best off being separated from the meta-client setup.</p>
+				<a href="#examples" id="examples" style="color: inherit; text-decoration: none;">
+					<h3>examples</h3>
+				</a>
+				<p>Access:</p>
+				<ul>
+					<li><code>&gt; npm run webpack-examples</code></li>
+					<li>This will compile all files named <code>index.ts</code>/<code>index.js</code> within subfolders of the <code>./examples</code> folder into a sibling <code>build</code> folder, and any &quot;loose&quot; scripts that are directly in the root of <code>./examples/</code> into their own file names.</li>
+				</ul>
+				<p>This will have examples which are focused on themselves; they intentionally should be out of the meta context, and likely consiste of multiple files.</p>
+				<p>I need to think of a convenient way of running the php within this folder and compiling the TS. This is because <code>&gt; npm run phpserver</code> is for the <code>/php</code> folder.</p>
+				<p>The current implementation of compiling TypeScript within the <code>./examples/</code> folder is <em>probably</em> unorthodox, but it involves using <code>webpack.examples.ts</code> by invoking </p>
+				<p>Guidelines and TypeScript Compilation Behaviour:</p>
+				<ul>
+					<li>Put any example into its own folder, with an <code>index.ts</code> file within it. This is the entry point</li>
+					<li>Wherever there is an index.ts file, it will be compiled into a sibling folder. You can have multiple nested folders like this and it still works.</li>
+					<li>Put any loose scripts inside of the root of <code>./examples</code>. Do not put an <code>index.ts</code> file here just for clarity, because this does not depend on an entry point.</li>
+				</ul>
+				<a href="#frontends" id="frontends" style="color: inherit; text-decoration: none;">
+					<h3>frontends</h3>
+				</a>
+				<p>This folder will/contains multiple browser frontend project samples.</p>
+				<p>These will likely just be very simple apps, and any APIs that they consume will likely be within the meta-server.</p>
+				<p>SolidJS is not included here, or at least not yet, because SolidJS is being used as the frontend lib that actually hosts the GUI for this repo, and as such the <code>tsx</code> snippets within the <code>js</code> browser are SolidJS based.</p>
+				<a href="#js" id="js" style="color: inherit; text-decoration: none;">
+					<h3>js</h3>
+				</a>
+				<p>Access (Node.js):</p>
+				<ul>
+					<li><code>&gt; npm run ts ./js/filename.ts</code></li>
+					<li>File extension is required, also use the<code>ts</code> command for <code>.js</code> files.</li>
+				</ul>
+				<p>Access (meta-client):</p>
+				<ul>
+					<li><code>&gt; npm run meta-server</code></li>
+					<li><code>&gt; npm run meta-client</code></li>
+					<li>Navigate to the respective file.</li>
+				</ul>
+				<p>Standard JavaScript/TypeScript files that can be ran anywhere.</p>
+				<a href="#js-browser" id="js-browser" style="color: inherit; text-decoration: none;">
+					<h3>js-browser</h3>
+				</a>
+				<p>Access (meta-client):</p>
+				<ul>
+					<li><code>&gt; npm run meta-server</code></li>
+					<li><code>&gt; npm run meta-client</code></li>
+					<li>Navigate to the respective file.</li>
+				</ul>
+				<p>Behaviour (based on file extension);</p>
+				<ul>
+					<li><code>html</code>: You&#39;ll be redirected to the HTML file statically and natively, with nothing to do with SolidJS thereafter.</li>
+					<li><code>tsx</code>: You&#39;ll see the file loaded as a component into the meta-client. This will then run in the runner frame/component (TBD).</li>
+					<li><code>ts</code>/<code>js</code>: These files will <a href="https://stackoverflow.com/a/7789831/13310905">load within the meta-client</a> onclick, unless they have been specified to rely on a specific context (such as a page like 10minutemail).</li>
+				</ul>
+				<p>The scripts within this folder all rely either on a DOM context. The <code>.html</code> and <code>.tsx</code> files rely on either a HTML or SolidJS context; meanwhile, the <code>.ts</code>/<code>.js</code> files either rely on a specific page&#39;s context, or on <em>any</em> arbitrary browser context - check each file for details.</p>
+				<a href="#js-express-api" id="js-express-api" style="color: inherit; text-decoration: none;">
+					<h3>js-express-api</h3>
+				</a>
+				<p>Access:</p>
+				<ul>
+					<li><code>import x from &quot;&quot;</code> within meta-server</li>
+					<li><code>&gt; npm run meta-server</code></li>
+					<li><code>curl</code> your desired API endpoint</li>
+				</ul>
+				<p>These are APIs that will be attached to the meta-server, in the URI <code>/snippet/api/</code></p>
+				<a href="#js-node" id="js-node" style="color: inherit; text-decoration: none;">
+					<h3>js-node</h3>
+				</a>
+				<p>Access (Node.js):</p>
+				<ul>
+					<li><code>&gt; npm run ts ./js/filename.ts</code></li>
+					<li>File extension is required, also use the<code>ts</code> command for <code>.js</code> files.</li>
+				</ul>
+				<p>These scripts rely on a Node.js context.</p>
+				<a href="#js-nunjucks" id="js-nunjucks" style="color: inherit; text-decoration: none;">
+					<h3>js-nunjucks</h3>
+				</a>
+				<p>TBD: I was considering making this in the same way <code>js-express-api</code> is done, except for views.</p>
+				<!-- ### php-scripts
+Access (PHP cli):
+- `> php ./php-scripts/filename.php` -->
+				<a href="#php" id="php" style="color: inherit; text-decoration: none;">
+					<h3>php</h3>
+				</a>
+				<p>Access (PHP cli):</p>
+				<ul>
+					<li><code>&gt; php ./php/filename.php</code> --&gt;</li>
+				</ul>
+				<p>Access (PHP dev server):</p>
+				<ul>
+					<li>Either:</li>
+					<li><ul>
+							<li><code>&gt; php -S localhost:30 -t ./php/</code>; or</li>
+						</ul>
+					</li>
+					<li><ul>
+							<li><code>&gt; npm run phpserver</code></li>
+						</ul>
+					</li>
+					<li>Then navigate to the page, or enter the URL to the file.</li>
+				</ul>
+				<a href="#meta" id="meta" style="color: inherit; text-decoration: none;">
+					<h2>META</h2>
+				</a>
+				<a href="#meta-server" id="meta-server" style="color: inherit; text-decoration: none;">
+					<h3>meta-server</h3>
+				</a>
+				<p>This is the &quot;META&quot; server that hosts both the browser and static file server for all of the files within this repository, and it enables creating snippets with Express without having to create a new Express app for every snippet - just export the router and import it in the meta-server server file.</p>
+				<p>The static file serving is done using <a href="https://github.com/expressjs/serve-index">serve-index</a></p>
+				<a href="#meta-client" id="meta-client" style="color: inherit; text-decoration: none;">
+					<h3>meta-client</h3>
+				</a>
+				<p>This is a frontend for this repository (which will be) built using SolidJS.</p>
+				<p>Here, this will serve the function of providing a nice way to browse the repository, including notes and such.</p>
+				<p>This was created with <code>&gt; npx degit solidjs/templates/ts meta-client</code> and merged into the main package.json.</p>
+				<p>This still uses vite.</p>
+				<p>To run, do:</p>
+				<ul>
+					<li><code>&gt; npm run meta-client</code></li>
+				</ul>
+				<a href="#languages" id="languages" style="color: inherit; text-decoration: none;">
+					<h2>Languages</h2>
+				</a>
+				<a href="#typescript" id="typescript" style="color: inherit; text-decoration: none;">
+					<h3>TypeScript</h3>
+				</a>
+				<p>Thou shall use TypeScript... or not, if you don&#39;t feel like it.</p>
+				<p>Use command <code>&gt; npm run ts</code>, and then specify a path to a <code>.ts</code> file. This is defined in the <code>package.json</code> file, but the way it works is not by defining a positional or optional argument, and instead NPM seems to just pass whatever you threw in.</p>
+				<p>The user syntax is as such:</p>
+				<ul>
+					<li><code>&gt; npm run ts ./loop-fetch-async.ts</code></li>
+				</ul>
+				<p>and the actually-ran command is:</p>
+				<ul>
+					<li><code>&gt; node --es-module-specifier-resolution=node --loader ts-node/esm ./loop-fetch-async.ts</code>, or some variant with strings surrounding the path.</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-function">
+						<a href="modules.html#araara" class="tsd-kind-icon">araara</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

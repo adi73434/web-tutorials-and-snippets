@@ -59,9 +59,9 @@
 		"meta-client_build": "vite build",
 		"meta-client_serve": "vite preview",
 		"phpserver": "php -S localhost:3052 -t ./php/",
-		"tsc-examples": "tsc --project ./examples/tsconfig.json",
-		"wtf": "ts-node node_modules/.bin/webpack-cli --config webpack.examples.ts",
-		"webpack-examples": "node --es-module-specifier-resolution=node --loader ts-node/esm node_modules/webpack-cli/bin/cli.js --config webpack.examples.ts --mode production"
+		"webpack-examples": "node --es-module-specifier-resolution=node --loader ts-node/esm node_modules/webpack-cli/bin/cli.js --config webpack.examples.ts --mode production",
+		"typedoc": "typedoc --tsconfig tsconfig.json --entryPoints meta-server/server.ts",
+		"tsc": "tsc"
 	},
 	"repository": {
 		"type": "git",

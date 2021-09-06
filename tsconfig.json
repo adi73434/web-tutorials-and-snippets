@@ -24,7 +24,7 @@
 	// "exclude": [
 	// 	"./webpack.config.ts"
 	// ]
-	// "include": [
-	// 	"", 
-	// ],
+	"include": [
+		"./js-node/*.ts",
+	],
 }
