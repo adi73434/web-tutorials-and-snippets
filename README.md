@@ -26,6 +26,15 @@ I'm also considering some cursed stuff like a C++ Lithium server thing, alongsid
 
 
 
+## Installation
+Install main deps
+- `> npm install`
+
+Install all frontend deps. This is required if you want to run any of the projects in `./frontends/`
+- `> npm run fe-install`
+
+
+
 ## Who this is for
 Myself, students, people who haven't yet learned better, and my friends so I can maintain a supposition that I know what I'm doing.
 
@@ -48,11 +57,11 @@ All "client side" stuff shall live on port `301x` and up, whereas all "server si
 
 Clients:
 - `3011`: `> npm run meta-client_serve`: Vite -> SolidJS (meta-client)
-- `3012`: `> npm run reactjs`: Webpack (probably) -> ReactJS (frontends) **(TBD)**
-- `3013`: `> npm run sveltejs`: Webpack (probably) -> SvelteJS (frontends) **(TBD)**
-- `3014`: `> npm run vuejs`: Webpack (probably) -> VueJS (frontends) **(TBD)**
-- `3015`: `> npm run angular`: Webpack (probably) -> Angular (frontends) **(TBD)**
-- `3016`: `> npm run angularjs1x`: Webpack (probably) -> AngularJS (frontends) **(TBD)**
+- `3012`: `> npm run fe-reactjs`: Webpack (probably) -> ReactJS (frontends) **(TBD)**
+- `3013`: `> npm run fe-sveltejs`: Webpack (probably) -> SvelteJS (frontends) **(TBD)**
+- `3014`: `> npm run fe-vuejs`: Webpack (probably) -> VueJS (frontends) **(TBD)**
+- `3015`: `> npm run fe-angular`: Webpack (probably) -> Angular (frontends) **(TBD)**
+- `3016`: `> npm run fe-angularjs1x`: Webpack (probably) -> AngularJS (frontends) **(TBD)**
 
 
 Servers:
@@ -89,6 +98,14 @@ Guidelines and TypeScript Compilation Behaviour:
 
 
 ### frontends
+Access:
+- Either:
+- - `> npm run fe-[frontendNameHere]`
+- Or:
+- - Go into the specific folder and see its documentation
+
+These will be configured in such a way that they can be ripped out of the context of the main project folder and will still work; they are set up in a standalone way.
+
 This folder will/contains multiple browser frontend project samples.
 
 These will likely just be very simple apps, and any APIs that they consume will likely be within the meta-server.
