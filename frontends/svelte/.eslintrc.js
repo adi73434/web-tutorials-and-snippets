@@ -59,10 +59,10 @@ module.exports = {
 			// Import ruleset
 			"./.eslint-global-config.js",
 		],
+		"parser": "@typescript-eslint/parser",
 		"parserOptions": {
 			"ecmaVersion": 2021,
 			"sourceType": "module",
-			"parser": "@typescript-eslint/parser",
 			"tsconfigRootDir": __dirname,
 			"project": "./tsconfig.json",
 		},
@@ -77,6 +77,10 @@ module.exports = {
 	// -------------------------------------------------------------------------
 	// !SECTION TypeScript specific
 	// -------------------------------------------------------------------------
+
+	// -------------------------------------------------------------------------
+	// SECTION Svelte TypeScript sepcific
+	// -------------------------------------------------------------------------
 	"overrides": [{
 		// Target only TypeScript files
 		"files": [
@@ -85,11 +89,11 @@ module.exports = {
 
 		"processor": "svelte3/svelte3",
 
+		"parser": "@typescript-eslint/parser",
 		"parserOptions": {
 			"ecmaVersion": 2021,
 			"sourceType": "module",
-			"parser": "@typescript-eslint/parser",
-			// "tsconfigRootDir": __dirname,
+			"tsconfigRootDir": __dirname,
 			"project": "./tsconfig.json",
 			"extraFileExtensions": [".svelte"],
 		},
@@ -98,10 +102,13 @@ module.exports = {
 			"@typescript-eslint",
 		],
 		"settings": {
-			// "svelte3/typescript": require("typescript"),
+			"svelte3/typescript": require("typescript"),
 			// ignore style tags in Svelte because of Tailwind CSS
 			// See https://github.com/sveltejs/eslint-plugin-svelte3/issues/70
 			"svelte3/ignore-styles": () => true,
 		},
 	}],
+	// -------------------------------------------------------------------------
+	// !SECTION
+	// -------------------------------------------------------------------------
 };
