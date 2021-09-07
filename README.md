@@ -214,6 +214,9 @@ This was created with `> npx degit solidjs/templates/ts meta-client` and merged 
 
 This still uses vite.
 
+I cannot find an ESLint plugin for SolidJS... but considering the [Svelte plugin](https://github.com/sveltejs/eslint-plugin-svelte3), maybe potentially eventually I could give a go at writing my own; however, I may be delusional, especially since the [React plugin](https://github.com/yannickcr/eslint-plugin-react) is a lot more complex and I don't know where SolidJS would stand since it, too, uses TSX.
+
+
 To run, do:
 - `> npm run meta-client`
 

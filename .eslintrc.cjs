@@ -70,4 +70,47 @@ module.exports = {
 	// -------------------------------------------------------------------------
 	// !SECTION TypeScript specific
 	// -------------------------------------------------------------------------
+
+
+	// -------------------------------------------------------------------------
+	// SECTION SolidJS specific
+	// -------------------------------------------------------------------------
+	"overrides": [{
+		// Target only TypeScript files
+		"files": [
+			"meta-client/src/*.ts",
+			"meta-client/src/*.tsx",
+		],
+		"extends": [
+			// TODO: Would be really cool to find (or write?) a SolidJS plugin since IDK how
+			// interchangeable the react stuff is
+			"plugin:react/recommended",
+			"plugin:@typescript-eslint/eslint-recommended",
+			"plugin:@typescript-eslint/recommended",
+			"google",
+			// Import ruleset
+			"./.eslint-global-config.cjs",
+		],
+		"parser": "@typescript-eslint/parser",
+		"parserOptions": {
+			"ecmaFeatures": {
+				"jsx": true,
+			},
+			"ecmaVersion": 2021,
+			"sourceType": "module",
+			"project": "./meta-client/tsconfig.json",
+		},
+		"plugins": [
+			"react",
+			"@typescript-eslint",
+		],
+		"rules": {
+			// Allow the use of ts-ignore for one liners
+			// "@typescript-eslint/ban-ts-ignore": "off",
+		},
+	}],
+	// -------------------------------------------------------------------------
+	// !SECTION
+	// -------------------------------------------------------------------------
+
 };
