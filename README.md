@@ -57,11 +57,11 @@ All "client side" stuff shall live on port `301x` and up, whereas all "server si
 
 Clients:
 - `3011`: `> npm run meta-client_serve`: Vite -> SolidJS (meta-client)
-- `3012`: `> npm run fe-reactjs`: Webpack (probably) -> ReactJS (frontends) **(TBD)**
-- `3013`: `> npm run fe-sveltejs`: Webpack (probably) -> SvelteJS (frontends) **(TBD)**
-- `3014`: `> npm run fe-vuejs`: Webpack (probably) -> VueJS (frontends) **(TBD)**
-- `3015`: `> npm run fe-angular`: Webpack (probably) -> Angular (frontends) **(TBD)**
-- `3016`: `> npm run fe-angularjs1x`: Webpack (probably) -> AngularJS (frontends) **(TBD)**
+- `3012`: `> npm run fe-dev-react`: Webpack (probably) -> ReactJS (frontends) **(TBD)**
+- `3013`: `> npm run fe-dev-svelte`: Webpack (probably) -> SvelteJS (frontends) **(TBD)**
+- `3014`: `> npm run fe-dev-vue`: Webpack (probably) -> VueJS (frontends) **(TBD)**
+- `3015`: `> npm run fe-dev-angular`: Webpack (probably) -> Angular (frontends) **(TBD)**
+- `3016`: `> npm run fe-dev-angularjs1x`: Webpack (probably) -> AngularJS (frontends) **(TBD)**
 
 
 Servers:

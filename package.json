@@ -61,9 +61,14 @@
 		"meta-client_serve": "vite preview --port 3011",
 		"phpserver": "php -S localhost:3052 -t ./php/",
 		"webpack-examples": "node --es-module-specifier-resolution=node --loader ts-node/esm node_modules/webpack-cli/bin/cli.js --config webpack.examples.ts --mode production",
-		"typedoc": "typedoc --tsconfig ./tsconfig.json",
 		"fe-install": "cd ./frontends/svelte && npm install",
-		"fe-dev-svelte": "cd ./frontends/svelte && npm run dev"
+		"fe-dev-react": "echo TBD",
+		"fe-dev-svelte": "cd ./frontends/svelte && npm run dev",
+		"fe-dev-vue": "echo TBD",
+		"fe-dev-angular": "echo TBD",
+		"fe-dev-angularjs1x": "echo TBD",
+		"docs-ts": "typedoc --tsconfig ./tsconfig.json",
+		"docs-php": "echo TBD"
 	},
 	"repository": {
 		"type": "git",
