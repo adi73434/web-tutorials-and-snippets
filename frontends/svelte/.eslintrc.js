@@ -62,9 +62,9 @@ module.exports = {
 			"ecmaVersion": 2021,
 			"sourceType": "module",
 			"parser": "@typescript-eslint/parser",
-			"tsconfigRootDir": __dirname,
+			// "tsconfigRootDir": __dirname,
 			"project": "./tsconfig.json",
-			"extraFileExtension": [".svelte"],
+			// "extraFileExtension": [".svelte"],
 		},
 		"plugins": [
 			"svelte3",

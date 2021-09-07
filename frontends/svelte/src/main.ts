@@ -7,4 +7,6 @@ const app = new App({
 	},
 });
 
+const a = "";
+
 export default app;
