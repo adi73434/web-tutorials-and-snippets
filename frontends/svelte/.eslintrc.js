@@ -9,10 +9,6 @@ module.exports = {
 	// NOTE: This is very important so that ESLint doesn't try to inherit parent configs
 	"root": true,
 
-	// Environment
-	// https://kangax.github.io/compat-table/es6/
-	// https://kangax.github.io/compat-table/es2016plus/
-	// https://kangax.github.io/compat-table/esnext/
 	"env": {
 		"es2021": true,
 		"browser": true,
@@ -21,7 +17,6 @@ module.exports = {
 	// Default standards
 	"extends": [
 		"google",
-		// Import ruleset
 		"./.eslint-global-config.js",
 	],
 
@@ -40,15 +35,10 @@ module.exports = {
 		// "Atomics": "readonly",
 	},
 
-
 	// -------------------------------------------------------------------------
 	// SECTION TypeScript specific
-	// TypeScript specific stuff, done like this so that we can have JavaScript
-	// files without all the TypeScript ESLint stuff in case anyone doesn't want
-	// to use TypeScript.
 	// -------------------------------------------------------------------------
 	"overrides": [{
-		// Target only TypeScript files
 		"files": [
 			"**/*.ts",
 		],
@@ -56,7 +46,6 @@ module.exports = {
 			"plugin:@typescript-eslint/eslint-recommended",
 			"plugin:@typescript-eslint/recommended",
 			"google",
-			// Import ruleset
 			"./.eslint-global-config.js",
 		],
 		"parser": "@typescript-eslint/parser",
@@ -82,13 +71,16 @@ module.exports = {
 	// SECTION Svelte TypeScript sepcific
 	// -------------------------------------------------------------------------
 	"overrides": [{
-		// Target only TypeScript files
 		"files": [
 			"**/*.svelte",
 		],
-
+		"extends": [
+			"plugin:@typescript-eslint/eslint-recommended",
+			"plugin:@typescript-eslint/recommended",
+			"google",
+			"./.eslint-global-config.js",
+		],
 		"processor": "svelte3/svelte3",
-
 		"parser": "@typescript-eslint/parser",
 		"parserOptions": {
 			"ecmaVersion": 2021,
