@@ -43,7 +43,6 @@
 		"ts-loader": "^9.2.5",
 		"ts-node": "^10.2.1",
 		"typedoc": "^0.21.9",
-		"typedoc-plugin-external-module-name": "^4.0.6",
 		"typedoc-theme-dark": "^0.0.5",
 		"typescript": "^4.4.2",
 		"vite": "^2.5.1",

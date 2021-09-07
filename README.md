@@ -244,7 +244,7 @@ The documentation is compiled with many "entry points" - because all the scripts
 Look into [typedoc-plugin-external-module-name](https://github.com/christopherthielen/typedoc-plugin-external-module-name) to group modules.
 
 Notes;
-- I think `> npm install --force --save-dev typedoc-plugin-external-module-name` is required because there was a dependency resolution error because it relies on a too-old verison of TypeScript.
+- I think `> npm install --force --save-dev typedoc-plugin-external-module-name` is required because there was a dependency resolution error because it relies on a too-old verison of TypeDoc; it's strictly defined to rely on `"typedoc": "0.17.6",`.
 - Couldn't get this working in the few minutes I had spare
 - https://www.npmjs.com/package/typedoc-plugin-external-module-name
 - https://github.com/christopherthielen/typedoc-plugin-external-module-name
