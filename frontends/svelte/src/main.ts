@@ -7,6 +7,6 @@ const app = new App({
 	},
 });
 
-const a = "";
+const a = "asdf";
 
 export default app;

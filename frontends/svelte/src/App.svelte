@@ -1,7 +1,12 @@
 <script lang="ts">
-	export let name: string;
-
 	let a = 'asdf';
+
+	// export let name: string;
+
+	let asdf = "asdf";
+
+	// let name: string;
+
 </script>
 
 <main>

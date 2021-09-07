@@ -5,7 +5,8 @@
 	"scripts": {
 		"build": "rollup -c",
 		"dev": "PORT=3013 rollup -c -w",
-		"start": "sirv public --no-clear --port 3013"
+		"start": "sirv public --no-clear --port 3013",
+		"lint": "eslint . --ext .svelte"
 	},
 	"devDependencies": {
 		"@rollup/plugin-commonjs": "^17.0.0",
