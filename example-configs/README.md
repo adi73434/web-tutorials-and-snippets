@@ -250,6 +250,26 @@ I barely know how to use it, but I have some reasons to use it and ideas that co
 
 
 
+## Documentation
+
+
+### TypeDoc
+I typically use TypeDoc but I had some issues with getting it running for this repo. It was complaining about `meta-client` which is probably (and I'm assuming here) because whatever `tsc` commands it may or may not run beforehand get messed up, or it simply just doesn't like it. Weridly, adding it to the excluded list doesn't work, hence I assume it's whatever preliminary commands typedoc runs that mess up.
+
+
+
+### Doxygen
+
+
+
+### JSDoc
+
+
+
+<br><br>
+
+
+
 ## Uncategorised
 
 

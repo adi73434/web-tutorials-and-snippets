@@ -24,6 +24,13 @@ import {MongoClient} from "mongodb";
 
 const app = express();
 
+/**
+ * some func logging asdf
+ *
+ */
+const someFunc = (): void => {
+	console.log("asdf");
+};
 
 // eslint-disable-next-line
 const routerApi = express.Router();

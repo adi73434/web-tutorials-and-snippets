@@ -31,5 +31,17 @@
 	],
 	"exclude": [
 		"./js/nocompile*.ts"
-	]
+	],
+	"typedocOptions": {
+		"entryPoints": [
+			"./meta-server/"
+		],
+		"out": "./docs/typedoc/"
+	}
+	// "exclude": [
+	// 	"./webpack.config.ts"
+	// ]
+	// "include": [
+	// 	"", 
+	// ],
 }
