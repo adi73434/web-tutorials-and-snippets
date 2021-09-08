@@ -1,22 +1,31 @@
 {
 	"compilerOptions": {
-		"target": "ES2021",
-		"lib": [
-			"dom",
-			"dom.iterable",
-			"esnext"
-		],
-		"allowJs": true,
-		"skipLibCheck": true,
-		"esModuleInterop": true,
-		"allowSyntheticDefaultImports": true,
+		"target": "ES2020",
+		"module": "ES2020",
+		"moduleResolution": "Node",
 		"strict": true,
-		"forceConsistentCasingInFileNames": true,
-		"noFallthroughCasesInSwitch": true,
-		"module": "esnext",
-		"moduleResolution": "node",
-		"resolveJsonModule": true,
-		"isolatedModules": true,
+		"allowJs": true,
+		// We do actually want to emit files... they'll go into `build` folders
+		// as a sibling to their respective index.ts/index.js file
 		"noEmit": false,
+		// Unnecessary afaik
+		"sourceMap": false,
+		"importsNotUsedAsValues": "error",
+		"traceResolution": false,
+		"skipLibCheck": false,
+		"esModuleInterop": true,
+		"isolatedModules": true,
+		"noFallthroughCasesInSwitch": true,
+		"forceConsistentCasingInFileNames": true,
+		"allowSyntheticDefaultImports": true,
+		"resolveJsonModule": true,
+		"lib": [
+			// Browser need not apply... except when it does; for browser-specific examples,
+			// uh, I'll figure it out (or not)
+			// https://stackoverflow.com/a/67401273/13310905
+			// "DOM",
+			// "DOM.Iterable",
+			"ES2020"
+		],
 	},
 }

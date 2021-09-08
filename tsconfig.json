@@ -1,23 +1,35 @@
 {
 	"compilerOptions": {
-		"target": "ES2021",
-		"lib": [
-			"dom",
-			"dom.iterable",
-			"esnext"
-		],
+		"target": "ES2020",
+		"module": "ES2020",
+		"moduleResolution": "Node",
+		"strict": true,
 		"allowJs": true,
+		// "checkJs": true,
+		"noEmit": true,
+		"sourceMap": true,
+		"importsNotUsedAsValues": "error",
+		// With traceResolution on, there's a lot
+		// being emitted even though skipLibCheck is
+		// set to true. With the types here, compiling
+		// seems to become faster and it seems to stop
+		// checking node_modules, but I think the implication
+		// of this is you don't get fancy types and auto-importing
+		// "types": [],
+		"traceResolution": false,
 		"skipLibCheck": true,
 		"esModuleInterop": true,
-		"allowSyntheticDefaultImports": true,
-		"strict": true,
-		"forceConsistentCasingInFileNames": true,
-		"noFallthroughCasesInSwitch": true,
-		"module": "esnext",
-		"moduleResolution": "node",
-		"resolveJsonModule": true,
 		"isolatedModules": true,
-		"noEmit": true,
+		"noFallthroughCasesInSwitch": true,
+		"forceConsistentCasingInFileNames": true,
+		"allowSyntheticDefaultImports": true,
+		"resolveJsonModule": true,
+		"lib": [
+			// Browser need not apply
+			// "DOM",
+			// "DOM.Iterable",
+			"ES2020"
+		],
 		"outDir": "",
 		"rootDir": "",
 	},
@@ -38,10 +50,4 @@
 		],
 		"out": "./docs/typedoc/"
 	}
-	// "exclude": [
-	// 	"./webpack.config.ts"
-	// ]
-	// "include": [
-	// 	"", 
-	// ],
 }

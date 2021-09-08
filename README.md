@@ -241,6 +241,31 @@ and the actually-ran command is:
 - `> node --es-module-specifier-resolution=node --loader ts-node/esm ./loop-fetch-async.ts`, or some variant with strings surrounding the path.
 
 
+#### Support
+I use Node 16 on Arch and Node 14 (LTS) on Win10. I assume most people would be on Node 14.
+
+
+Presumptions/Assumptions/what I feel is right (as of time of writing):
+- My config for Node *and* browser (le lazy): `"target": ES2020"`, `"module": "ES2020"`
+- Node 14 recommended: `"target": ES2020"`, `"module": "commonjs"`
+- Node 16 recommended: `"target": ES2021"`, `"module": "commonjs"`
+- Browser recommended: `"target": ES2021"`, `"module": "ES2020"`
+
+
+References:
+- https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping
+- https://github.com/tsconfig/bases/blob/main/bases/node14.json
+- https://github.com/tsconfig/bases/blob/main/bases/node16.json
+- [Browser ES2020](https://caniuse.com/?feats=mdn-javascript_operators_optional_chaining,mdn-javascript_operators_nullish_coalescing,mdn-javascript_builtins_globalthis,es6-module-dynamic-import,bigint,mdn-javascript_builtins_promise_allsettled,mdn-javascript_builtins_string_matchall,mdn-javascript_statements_export_namespace,mdn-javascript_statements_import_meta)
+- [Browser ES2021](https://caniuse.com/?feats=mdn-javascript_builtins_string_replaceall,mdn-javascript_builtins_promise_any,mdn-javascript_builtins_weakref,mdn-javascript_operators_logical_or_assignment,mdn-javascript_operators_logical_and_assignment,mdn-javascript_operators_logical_nullish_assignment,mdn-javascript_grammar_numeric_separators)
+
+
+
+##### `module`
+ES2020 adds support for things like `import.meta.url` or whatever.
+
+Node 
+
 
 ## Documentation
 

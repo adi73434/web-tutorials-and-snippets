@@ -10,7 +10,7 @@ module.exports = {
 	"root": true,
 
 	"env": {
-		"es2021": true,
+		"es2020": true,
 		"browser": true,
 	},
 
@@ -21,7 +21,7 @@ module.exports = {
 	],
 
 	"parserOptions": {
-		"ecmaVersion": 2021,
+		"ecmaVersion": 2020,
 		"sourceType": "module",
 		"project": "./tsconfig.json",
 	},
@@ -50,7 +50,7 @@ module.exports = {
 		],
 		"parser": "@typescript-eslint/parser",
 		"parserOptions": {
-			"ecmaVersion": 2021,
+			"ecmaVersion": 2020,
 			"sourceType": "module",
 			"tsconfigRootDir": __dirname,
 			"project": "./tsconfig.json",
@@ -83,7 +83,7 @@ module.exports = {
 		"processor": "svelte3/svelte3",
 		"parser": "@typescript-eslint/parser",
 		"parserOptions": {
-			"ecmaVersion": 2021,
+			"ecmaVersion": 2020,
 			"sourceType": "module",
 			"tsconfigRootDir": __dirname,
 			"project": "./tsconfig.json",

@@ -1,6 +1,9 @@
 import path from "path";
 import fs from "fs";
-import webpack from "webpack";
+// It has been 5 minutes since I set the following rule in tsconfig:
+// "importsNotUsedAsValues": "error",
+// and I'm already thinking it's mildly redundant, so I'll likely remove that
+import type webpack from "webpack";
 
 // -----------------------------------------------------------------------------
 // Dirname stuff

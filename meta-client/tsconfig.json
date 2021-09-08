@@ -1,10 +1,27 @@
 {
 	"compilerOptions": {
-		"target": "ESNext",
-		"module": "ESNext",
-		"moduleResolution": "node",
-		"allowSyntheticDefaultImports": true,
+		"target": "ES2020",
+		"module": "ES2020",
+		"moduleResolution": "Node",
+		"strict": true,
+		"allowJs": true,
+		"noEmit": true,
+		"sourceMap": true,
+		"importsNotUsedAsValues": "error",
+		"traceResolution": false,
+		"skipLibCheck": true,
 		"esModuleInterop": true,
+		"isolatedModules": true,
+		"noFallthroughCasesInSwitch": true,
+		"forceConsistentCasingInFileNames": true,
+		"allowSyntheticDefaultImports": true,
+		"resolveJsonModule": true,
+		"lib": [
+			// Here haveth browser
+			"DOM",
+			"DOM.Iterable",
+			"ES2020"
+		],
 		"jsx": "preserve",
 		"jsxImportSource": "solid-js",
 		"types": ["vite/client"]

@@ -10,7 +10,7 @@ module.exports = {
 	// https://kangax.github.io/compat-table/es2016plus/
 	// https://kangax.github.io/compat-table/esnext/
 	"env": {
-		"es2021": true,
+		"es2020": true,
 		"node": true,
 	},
 
@@ -96,7 +96,7 @@ module.exports = {
 			"ecmaFeatures": {
 				"jsx": true,
 			},
-			"ecmaVersion": 2021,
+			"ecmaVersion": 2020,
 			"sourceType": "module",
 			"project": "./meta-client/tsconfig.json",
 		},
