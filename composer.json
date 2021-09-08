@@ -1,0 +1,22 @@
+{
+	"name": "adi73434/web-tutorials-and-snippets",
+	"type": "project",
+	"require": {
+		"phpmailer/phpmailer": "^6.5",
+		"p3k/picofeed": "^0.1.40",
+		"firebase/php-jwt": "^5.4",
+		"phpunit/phpunit": "^9.5",
+		"react/event-loop": "^1.2",
+		"react/http": "^1.5"
+	},
+	"license": "MIT",
+	"autoload": {
+		"psr-4": {
+			"Adi73434\\WebTutorialsAndSnippets\\": "php/"
+		}
+	},
+	"authors": [{
+		"name": "airi",
+		"email": "adi73434@gmail.com"
+	}]
+}

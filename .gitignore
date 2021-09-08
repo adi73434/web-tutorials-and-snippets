@@ -1,3 +1,6 @@
 .history
+
 node_modules
+vendor
+
 meta-client/dist
