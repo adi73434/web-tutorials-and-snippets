@@ -33,21 +33,19 @@
 		"outDir": "",
 		"rootDir": "",
 	},
+	// As far as I know, with how things are currently configured, this is not really needed
+	// because all of the files that this root tsconfig concerns are not emitted and ran either with `npm run ts`
+	// or some other specific command, and not `tsc` itself
 	"include": [
 		"./examples/**/*.ts",
 		"./js/**/*.ts",
 		"./js-browser/**/*.ts",
 		"./js-express-api/**/*.ts",
 		"./js-node/**/*.ts",
-		"./meta-client/**/*.ts"
+		"./meta-client/**/*.ts",
+		"./meta-server/**/*.ts"
 	],
 	"exclude": [
 		"./js/nocompile*.ts"
 	],
-	"typedocOptions": {
-		"entryPoints": [
-			"./meta-server/"
-		],
-		"out": "./docs/typedoc/"
-	}
 }

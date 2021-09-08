@@ -5,7 +5,8 @@
 		"./js-browser/",
 		"./js-express-api/",
 		"./js-node/",
-		"./meta-client/"
+		"./meta-client/",
+		"./meta-server/"
 	],
 	"theme": "./node_modules/typedoc-theme-dark/dist/dark/",
 	"out": "docs"

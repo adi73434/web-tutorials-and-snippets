@@ -88,6 +88,17 @@
 				</ul>
 				<p>This is really a catch-all repository and I think I might keep it on my GitHub instead of GitLab <em>(ad populum intensifies)</em>, because so many people use GitHub.</p>
 				<p>I&#39;m also considering some cursed stuff like a C++ Lithium server thing, alongside the other server solutions, but using <a href="https://www.npmjs.com/package/cmake-js">cmake-js</a>.</p>
+				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+					<h2>Installation</h2>
+				</a>
+				<p>Install main deps</p>
+				<ul>
+					<li><code>&gt; npm install</code></li>
+				</ul>
+				<p>Install all frontend deps. This is required if you want to run any of the projects in <code>./frontends/</code></p>
+				<ul>
+					<li><code>&gt; npm run fe-install</code></li>
+				</ul>
 				<a href="#who-this-is-for" id="who-this-is-for" style="color: inherit; text-decoration: none;">
 					<h2>Who this is for</h2>
 				</a>
@@ -106,11 +117,11 @@
 				<p>Clients:</p>
 				<ul>
 					<li><code>3011</code>: <code>&gt; npm run meta-client_serve</code>: Vite -&gt; SolidJS (meta-client)</li>
-					<li><code>3012</code>: <code>&gt; npm run reactjs</code>: Webpack (probably) -&gt; ReactJS (frontends) <strong>(TBD)</strong></li>
-					<li><code>3013</code>: <code>&gt; npm run sveltejs</code>: Webpack (probably) -&gt; SvelteJS (frontends) <strong>(TBD)</strong></li>
-					<li><code>3014</code>: <code>&gt; npm run vuejs</code>: Webpack (probably) -&gt; VueJS (frontends) <strong>(TBD)</strong></li>
-					<li><code>3015</code>: <code>&gt; npm run angular</code>: Webpack (probably) -&gt; Angular (frontends) <strong>(TBD)</strong></li>
-					<li><code>3016</code>: <code>&gt; npm run angularjs1x</code>: Webpack (probably) -&gt; AngularJS (frontends) <strong>(TBD)</strong></li>
+					<li><code>3012</code>: <code>&gt; npm run fe-dev-react</code>: Webpack (probably) -&gt; ReactJS (frontends) <strong>(TBD)</strong></li>
+					<li><code>3013</code>: <code>&gt; npm run fe-dev-svelte</code>: Webpack (probably) -&gt; SvelteJS (frontends) <strong>(TBD)</strong></li>
+					<li><code>3014</code>: <code>&gt; npm run fe-dev-vue</code>: Webpack (probably) -&gt; VueJS (frontends) <strong>(TBD)</strong></li>
+					<li><code>3015</code>: <code>&gt; npm run fe-dev-angular</code>: Webpack (probably) -&gt; Angular (frontends) <strong>(TBD)</strong></li>
+					<li><code>3016</code>: <code>&gt; npm run fe-dev-angularjs1x</code>: Webpack (probably) -&gt; AngularJS (frontends) <strong>(TBD)</strong></li>
 				</ul>
 				<p>Servers:</p>
 				<ul>
@@ -144,6 +155,20 @@
 				<a href="#frontends" id="frontends" style="color: inherit; text-decoration: none;">
 					<h3>frontends</h3>
 				</a>
+				<p>Access:</p>
+				<ul>
+					<li>Either:</li>
+					<li><ul>
+							<li><code>&gt; npm run fe-[frontendNameHere]</code></li>
+						</ul>
+					</li>
+					<li>Or:</li>
+					<li><ul>
+							<li>Go into the specific folder and see its documentation</li>
+						</ul>
+					</li>
+				</ul>
+				<p>These will be configured in such a way that they can be ripped out of the context of the main project folder and will still work; they are set up in a standalone way.</p>
 				<p>This folder will/contains multiple browser frontend project samples.</p>
 				<p>These will likely just be very simple apps, and any APIs that they consume will likely be within the meta-server.</p>
 				<p>SolidJS is not included here, or at least not yet, because SolidJS is being used as the frontend lib that actually hosts the GUI for this repo, and as such the <code>tsx</code> snippets within the <code>js</code> browser are SolidJS based.</p>
@@ -240,6 +265,7 @@ Access (PHP cli):
 				<p>Here, this will serve the function of providing a nice way to browse the repository, including notes and such.</p>
 				<p>This was created with <code>&gt; npx degit solidjs/templates/ts meta-client</code> and merged into the main package.json.</p>
 				<p>This still uses vite.</p>
+				<p>I cannot find an ESLint plugin for SolidJS... but considering the <a href="https://github.com/sveltejs/eslint-plugin-svelte3">Svelte plugin</a>, maybe potentially eventually I could give a go at writing my own; however, I may be delusional, especially since the <a href="https://github.com/yannickcr/eslint-plugin-react">React plugin</a> is a lot more complex and I don&#39;t know where SolidJS would stand since it, too, uses TSX.</p>
 				<p>To run, do:</p>
 				<ul>
 					<li><code>&gt; npm run meta-client</code></li>
@@ -260,6 +286,30 @@ Access (PHP cli):
 				<ul>
 					<li><code>&gt; node --es-module-specifier-resolution=node --loader ts-node/esm ./loop-fetch-async.ts</code>, or some variant with strings surrounding the path.</li>
 				</ul>
+				<a href="#support" id="support" style="color: inherit; text-decoration: none;">
+					<h4>Support</h4>
+				</a>
+				<p>I use Node 16 on Arch and Node 14 (LTS) on Win10. I assume most people would be on Node 14.</p>
+				<p>Presumptions/Assumptions/what I feel is right (as of time of writing):</p>
+				<ul>
+					<li>My config for Node <em>and</em> browser (le lazy): <code>&quot;target&quot;: ES2020&quot;</code>, <code>&quot;module&quot;: &quot;ES2020&quot;</code></li>
+					<li>Node 14 recommended: <code>&quot;target&quot;: ES2020&quot;</code>, <code>&quot;module&quot;: &quot;commonjs&quot;</code></li>
+					<li>Node 16 recommended: <code>&quot;target&quot;: ES2021&quot;</code>, <code>&quot;module&quot;: &quot;commonjs&quot;</code></li>
+					<li>Browser recommended: <code>&quot;target&quot;: ES2021&quot;</code>, <code>&quot;module&quot;: &quot;ES2020&quot;</code></li>
+				</ul>
+				<p>References:</p>
+				<ul>
+					<li><a href="https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping">https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping</a></li>
+					<li><a href="https://github.com/tsconfig/bases/blob/main/bases/node14.json">https://github.com/tsconfig/bases/blob/main/bases/node14.json</a></li>
+					<li><a href="https://github.com/tsconfig/bases/blob/main/bases/node16.json">https://github.com/tsconfig/bases/blob/main/bases/node16.json</a></li>
+					<li><a href="https://caniuse.com/?feats=mdn-javascript_operators_optional_chaining,mdn-javascript_operators_nullish_coalescing,mdn-javascript_builtins_globalthis,es6-module-dynamic-import,bigint,mdn-javascript_builtins_promise_allsettled,mdn-javascript_builtins_string_matchall,mdn-javascript_statements_export_namespace,mdn-javascript_statements_import_meta">Browser ES2020</a></li>
+					<li><a href="https://caniuse.com/?feats=mdn-javascript_builtins_string_replaceall,mdn-javascript_builtins_promise_any,mdn-javascript_builtins_weakref,mdn-javascript_operators_logical_or_assignment,mdn-javascript_operators_logical_and_assignment,mdn-javascript_operators_logical_nullish_assignment,mdn-javascript_grammar_numeric_separators">Browser ES2021</a></li>
+				</ul>
+				<a href="#module" id="module" style="color: inherit; text-decoration: none;">
+					<h5><code>module</code></h5>
+				</a>
+				<p>ES2020 adds support for things like <code>import.meta.url</code> or whatever.</p>
+				<p>Node </p>
 				<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
 					<h2>Documentation</h2>
 				</a>
@@ -273,6 +323,20 @@ Access (PHP cli):
 					<li><a href="https://typedoc.org/">https://typedoc.org/</a></li>
 					<li>For consideration: <a href="https://typedoc.org/guides/installation/#node-module">https://typedoc.org/guides/installation/#node-module</a></li>
 					<li><a href="https://npm.io/package/typedoc-theme-dark">https://npm.io/package/typedoc-theme-dark</a></li>
+				</ul>
+				<p>TypeDoc only seems to document things that are exported from files, so you will receive a bunch of <code>Warning: Unable to locate entry point</code> messages which you can ignore. For any things you want documented, export them at the bottom of the file; or, if you wish, just prefix everything with <code>export</code>.</p>
+				<p>Also, since TypeDoc apparently relies on the TypeScript compiler or whatever for information, it doesn&#39;t work with JavaScript files. Unless it does and it requires a bit more config.</p>
+				<a href="#module-grouping" id="module-grouping" style="color: inherit; text-decoration: none;">
+					<h4>Module Grouping</h4>
+				</a>
+				<p>The documentation is compiled with many &quot;entry points&quot; - because all the scripts live loosely and there is no main project where everything is referenced - and this causes all the &quot;Modules&quot; in TypeDoc to display with one long illogical list.</p>
+				<p>Look into <a href="https://github.com/christopherthielen/typedoc-plugin-external-module-name">typedoc-plugin-external-module-name</a> to group modules.</p>
+				<p>Notes;</p>
+				<ul>
+					<li>I think <code>&gt; npm install --force --save-dev typedoc-plugin-external-module-name</code> is required because there was a dependency resolution error because it relies on a too-old verison of TypeDoc; it&#39;s strictly defined to rely on <code>&quot;typedoc&quot;: &quot;0.17.6&quot;,</code>.</li>
+					<li>Couldn&#39;t get this working in the few minutes I had spare</li>
+					<li><a href="https://www.npmjs.com/package/typedoc-plugin-external-module-name">https://www.npmjs.com/package/typedoc-plugin-external-module-name</a></li>
+					<li><a href="https://github.com/christopherthielen/typedoc-plugin-external-module-name">https://github.com/christopherthielen/typedoc-plugin-external-module-name</a></li>
 				</ul>
 				<a href="#typedoc-tsc" id="typedoc-tsc" style="color: inherit; text-decoration: none;">
 					<h4>typedoc-tsc</h4>
@@ -302,6 +366,15 @@ Access (PHP cli):
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/js_chalk_colours.html">js/chalk-<wbr>colours</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/meta_server_api.html">meta-<wbr>server/api</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/meta_server_server.html">meta-<wbr>server/server</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/meta_server_snippets.html">meta-<wbr>server/snippets</a>
 					</li>
 				</ul>
 			</nav>

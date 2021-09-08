@@ -281,6 +281,12 @@ Node
 - https://npm.io/package/typedoc-theme-dark
 
 
+TypeDoc only seems to document things that are exported from files, so you will receive a bunch of `Warning: Unable to locate entry point` messages which you can ignore. For any things you want documented, export them at the bottom of the file; or, if you wish, just prefix everything with `export`.
+
+
+Also, since TypeDoc apparently relies on the TypeScript compiler or whatever for information, it doesn't work with JavaScript files. Unless it does and it requires a bit more config.
+
+
 
 #### Module Grouping
 The documentation is compiled with many "entry points" - because all the scripts live loosely and there is no main project where everything is referenced - and this causes all the "Modules" in TypeDoc to display with one long illogical list.

@@ -52,7 +52,7 @@
 		"webpack-cli": "^4.8.0"
 	},
 	"scripts": {
-		"watch-browser": "browser-sync start --config bs-config.js",
+		"watch-browser": "echo 'This is not actually configured (yet?)' || browser-sync start --config bs-config.js",
 		"ts": "node --es-module-specifier-resolution=node --loader ts-node/esm",
 		"js": "node",
 		"meta-server": "nodemon",
