@@ -13,3 +13,8 @@
 To test requests per second and request time (not time to full load, as far as I know):
 - using `ApacheBench`, where `n` specifies the amount and `c` the concurrency. This requires that you either specify a file or end the URI with a `/`. You need not specify the port
 - `> ab -n 1000 -c 100 http://localhost:80/`
+
+
+
+### to-read
+- https://en.wikipedia.org/wiki/HATEOAS
