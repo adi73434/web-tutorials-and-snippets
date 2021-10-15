@@ -16,7 +16,7 @@ I'm considering using this myself, since I've always wanted a "YAFIYGI" style wa
 The way I saw this could potentially be done (via a semi-unrelated use case), is with codeblocks using `mermaid`, however it's incredibly cumbersome - there might be some syntax here that could be useful, or a different markup language even.
 
 
-<mark>As it turns out, the codeblock below is not supported on GitHub</mark>
+<mark>As it turns out, the codeblock below is not supported on GitHub, and neither is the `<mark>` tag, apparently.</mark>
 
 ```mermaid
 graph TB
