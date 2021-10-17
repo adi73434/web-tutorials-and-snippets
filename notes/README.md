@@ -23,3 +23,10 @@ To test requests per second and request time (not time to full load, as far as I
 
 ### Frontend library/framework sizes
 - https://dev.to/this-is-learning/javascript-framework-todomvc-size-comparison-504f
+
+
+
+
+### React
+Context (instead of Redux): 
+- https://kentcdodds.com/blog/how-to-use-react-context-effectively#the-custom-provider-component
