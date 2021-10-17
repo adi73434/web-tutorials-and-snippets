@@ -18,3 +18,8 @@ To test requests per second and request time (not time to full load, as far as I
 
 ### to-read
 - https://en.wikipedia.org/wiki/HATEOAS
+
+
+
+### Frontend library/framework sizes
+- https://dev.to/this-is-learning/javascript-framework-todomvc-size-comparison-504f
