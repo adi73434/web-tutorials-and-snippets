@@ -29,7 +29,7 @@ GIT_SEQUENCE_EDITOR=: git rebase -i HEAD~${NUM_COMMITS_TO_REBASE} --exec "git co
 
 
 ### "Cache" SSH key passphrase
-- `> eval ssh-agent -s`
+- `> eval $(ssh-agent -s)`
 - `> ssh-add ~/.ssh/id_ed25519`
 
 
