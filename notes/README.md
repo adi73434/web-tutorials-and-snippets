@@ -30,3 +30,8 @@ To test requests per second and request time (not time to full load, as far as I
 ### React
 Context (instead of Redux): 
 - https://kentcdodds.com/blog/how-to-use-react-context-effectively#the-custom-provider-component
+
+
+
+### CSS "FLIP" animation
+- https://stackoverflow.com/a/49882733/13310905
