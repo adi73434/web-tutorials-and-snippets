@@ -26,12 +26,32 @@ To test requests per second and request time (not time to full load, as far as I
 
 
 
-
 ### React
-Context (instead of Redux): 
-- https://kentcdodds.com/blog/how-to-use-react-context-effectively#the-custom-provider-component
+- Use [React context](https://reactjs.org/docs/context.html) instead of Redux to store a global state/store. This can store state and methods. [Example here](https://kentcdodds.com/blog/how-to-use-react-context-effectively#the-custom-provider-component)
 
 
 
 ### CSS "FLIP" animation
 - https://stackoverflow.com/a/49882733/13310905
+
+
+
+### Redux
+- https://blog.logrocket.com/when-and-when-not-to-use-redux-41807f29a7fb/
+
+
+
+### NextJS
+- NextJS https://nextjs.org/docs/getting-started
+- Create-React-App -> NextJS https://nextjs.org/docs/migrating/from-create-react-app
+- - this seems like migrating 
+
+
+
+### Preact
+- SSR https://preactjs.com/guide/v10/server-side-rendering/
+- Partial hydration https://www.jameshill.dev/articles/partial-hydration/
+- Next JS plugin https://github.com/preactjs/next-plugin-preact
+
+
+Using hydration just requires using `hydrate()` instead of `render()`, as shown [here](https://preactjs.com/guide/v10/api-reference/#hydrate)
