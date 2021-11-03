@@ -63,6 +63,17 @@ module.exports = {
 			"error",
 			"separate-lines",
 		],
+		
+		// Allow /// <reference types="x" />
+		"spaced-comment": [
+			"error",
+			"always",
+			{
+				"markers" : [
+					"/"
+				]
+			}
+		],
 
 		// "no-warning-comments": [
 		// 	"warn",
