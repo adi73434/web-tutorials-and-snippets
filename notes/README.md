@@ -31,11 +31,6 @@ To test requests per second and request time (not time to full load, as far as I
 
 
 
-### CSS "FLIP" animation
-- https://stackoverflow.com/a/49882733/13310905
-
-
-
 ### Redux
 - https://blog.logrocket.com/when-and-when-not-to-use-redux-41807f29a7fb/
 
