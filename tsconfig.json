@@ -26,7 +26,7 @@
 		"resolveJsonModule": true,
 		"lib": [
 			// Browser need not apply
-			// "DOM",
+			"DOM",
 			// "DOM.Iterable",
 			"ES2020"
 		],

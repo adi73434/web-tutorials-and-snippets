@@ -118,10 +118,10 @@ module.exports = {
 		// No tabs also stops ESLint from screaming about tabs in comments
 		"no-tabs": 0,
 
-		// Linebreak using Windows \r\n instead of the Unix \n
+		// Linebreak using Unix \n instead of the Windows \r\n
 		"linebreak-style": [
 			"error",
-			"windows",
+			"unix",
 		],
 
 		// ---------------------------------------------------------------------
