@@ -39,10 +39,12 @@ I also recommend looking into keychain; I tried to write the ssh-agent and ssh-a
 #### Keychain
 See: https://wiki.archlinux.org/title/SSH_keys#Keychain
 
-A command like the following can be used to load multiple keys. This should ask once for the passwords, then whenever you need to access the keys in another terminal you can re-run the command - or just add it to your `~/.bashrc`. I imagine there's a cleaner way to do this though, so that you don't get the spam at the top of your terminal.
+A command like the following can be used to load multiple keys. This should ask once for the passwords, then whenever you need to access the keys in another terminal you can re-run the command - or just add it to your `~/.bashrc`.
 ```bash
 eval $(keychain --eval key_file_name1 key_file_name2 ~/.keys/custom_key_location)
 ```
+
+You can add `--quiet` to suppress the output, which is nice for the `.bashrc` file.
 
 **Note that, with keychain, the ssh-agent runs for the entire local machine - as per my understanding**
 
