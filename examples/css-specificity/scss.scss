@@ -1,0 +1,42 @@
+ 
+// Everything inside here only applies to elements with these
+// classes that are within an element with the class "fancy-parent"
+.fancy-parent {
+	background-color: yellow;
+
+
+	.child {
+		padding: 20px;
+		font-family: "Fira Code";
+		background-color: green;
+		color: white;
+	}
+
+	.cool-input-box {
+		// NOTE: I forgot the syntax of border, but this is probably right
+		border: 10px solid red;
+		background-color: blue;
+	}
+}
+
+// Everything inside here only applies to elements with these
+// classes that are within an element with the class "other-parent"
+.other-parent {
+
+	.child {
+		// Not so fancy now, are we?
+		font-family: "Times New Roman";
+		background-color: brown;
+	}
+
+	.cool-input-box {
+		background-color: orange;
+	}
+}
+
+
+
+// Applies to all children
+.child {
+	color: grey;
+}
