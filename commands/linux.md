@@ -1,7 +1,19 @@
 
 
-## - Convert LF -> CRLF, with exclusions
-- `> find . -type d \( -name node_modules -o -path ./.git \) -prune -false -o -type f -name '*.*' -print0 | xargs -0 unix2dos` (Reference [here](https://stackoverflow.com/a/4210072))
+## Convert LF/CRLF
+Convert the line endings of files.
+
+### All within folder
+- `> find . -type f -print0 | xargs -0 dos2unix`
+
+
+Replace `dos2unix` with `unix2dos` to convert to CRLF.
+
+
+
+### With exclusions
+Set the folders you want to include within the parentheses `()`. This is a little weird with the `-name` and `-path`, and I forget why I had to use them like that. Reference [here](https://stackoverflow.com/a/4210072)
+- `> find . -type d \( -name node_modules -o -path ./.git \) -prune -false -o -type f -name '*.*' -print0 | xargs -0 unix2dos` 
 
 Notes:
 - ` \( -name node_modules -o -path ./.git \)` are the exclusions
@@ -9,14 +21,31 @@ Notes:
 
 
 
+<br><br>
+
+
+
 ## File operations
-`pdfseparate -f 1 -l 3 input-pdf.pdf output-page%d.pdf`, where `-f` and `-l` specify the first and last pages, splits the PDF into separate files.
+Split PDF into separate files:
+- `> pdfseparate -f 1 -l 3 input-pdf.pdf output-page%d.pdf`, where `-f` and `-l` specify the first and last pages, splits the PDF into separate files.
 
 
-`rg --files | tree --fromfile > lmao.txt` to list all files within a directory, whilst respecting `.gitignore` files
+<br>
 
 
-Use `find . -type f -print0 | xargs -0 dos2unix` (or `unix2dos`) to convert the line endings of files within the current folder
+List all files within a directory whilst respecting `.gitignore` files:
+- `> rg --files | tree --fromfile > output.txt`
+
+
+<br>
+
+
+Find and count all files matching a certain extension. Omit the `| wc -l` to list all the files instead of counting.
+- `> find . -type f -print | grep php | wc -l` 
+
+
+
+<br><br>
 
 
 
@@ -47,6 +76,10 @@ eval $(keychain --eval key_file_name1 key_file_name2 ~/.keys/custom_key_location
 You can add `--quiet` to suppress the output, which is nice for the `.bashrc` file.
 
 **Note that, with keychain, the ssh-agent runs for the entire local machine - as per my understanding**
+
+
+
+<br><br>
 
 
 
