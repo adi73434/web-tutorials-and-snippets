@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+
+
+	<div class="parent">
+		<!-- Child is directly under parent -->
+		<div class="child">
+			<p>some text 1</p>
+			<p>some text 1</p>
+			<!-- This child is NOT directly under parent -->
+			<div class="child">
+				<p>some text 2</p>
+				<p>some text 2</p>
+				<p>
+					Although this element does not get the <code>.parent>.child</code> applied to it,<br>
+					it is still going to be cyan because its within the above child,
+					unless it has its own colour set.<br>
+					The colour of this will be maroon because that is the colour of the main <code>.child</code>
+				</p>
+			</div>
+		</div>
+
+		<!-- This hellspawn is directly under parent -->
+		<div class="hellspawn">
+			<p>some text 3</p>
+			<p>some text 3</p>
+			<p>The font of this hellspawn will be your default browser font, because none was set</p>
+			<!-- This child is NOT directly under parent -->
+			<div class="child">
+				<p>some text 4</p>
+				<p>some text 4</p>
+			</div>
+		</div>
+
+		<!-- This child is also directly under parent -->
+		<div class="child">
+			<p>some text 5</p>
+			<p>some text 5</p>
+			<!-- This hellspawn is NOT directly under parent -->
+			<div class="hellspawn">
+				<p>some text 6</p>
+				<p>some text 6</p>
+				<p>
+					Because hellspawn doesn't have its own font set, it'll use the one of the parent <code>.child</code>
+				</p>
+			</div>
+		</div>
+
+	</div>
+</body>
+
+</html>

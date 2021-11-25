@@ -1,0 +1,20 @@
+.parent {}
+
+
+/* If you do not set this */
+.child {
+	background-color: maroon;
+	color: white;
+	font-family: "Arial";
+}
+
+.parent>.child {
+	background-color: cyan;
+	color: black;
+	font-family: "Futura";
+}
+
+
+.parent .hellspawn {
+	background-color: fuchsia;
+}
