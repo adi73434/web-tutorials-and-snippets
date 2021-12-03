@@ -20,3 +20,19 @@ Uninstall example:
 Get-AppXPackage *Microsoft.Windows.Photos* | Remove-AppXPackage
 ```
 
+
+
+## MS Store
+
+
+
+### Fix apps failing to install
+See: https://answers.microsoft.com/en-us/windows/forum/all/microsoft-store-keeps-trying-to-install/0f38210a-c6f2-402c-b0f4-7933fbb6ddd9
+`> net stop wuauserv`
+`> net stop cryptSvc`
+`> net stop bits`
+`> ren C:\Windows\SoftwareDistribution SoftwareDistribution.old`
+`> ren C:\Windows\System32\catroot2 Catroot2.old`
+`> net start wuauserv`
+`> net start cryptSvc`
+`> net start bits`
