@@ -13,4 +13,4 @@ const digitC = digitA + digitB
 
 console.log("Digit C is: " + digitC);
 
-if (0.3 === digitC) { console.log("Same") }
+if (3 === digitC) { console.log("Same") }
