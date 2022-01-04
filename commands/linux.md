@@ -83,6 +83,15 @@ You can add `--quiet` to suppress the output, which is nice for the `.bashrc` fi
 
 
 
+## Process management
+Find php-fpm RAM usage: `> ps -ylC php-fpm --sort:rss`
+
+
+
+<br><br>
+
+
+
 ## unorganised
 Change `/bin/sh` to dash; dash is supposedly a little snappier and is POSIX sh, instead of bash.
 - check with `ls -l /bin/sh`
