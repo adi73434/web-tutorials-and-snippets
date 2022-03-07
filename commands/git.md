@@ -25,3 +25,12 @@ TIME_OFFSET=+ 8 hours
 
 GIT_SEQUENCE_EDITOR=: git rebase -i HEAD~${NUM_COMMITS_TO_REBASE} --exec "git commit --amend --date \"$(date -d "$(git log $GIT_COMMIT -n1 --format=%aD)${TIME_OFFSET}" -R)\""
 ```
+
+
+
+### HTTPS -> SSH
+Tried this specifically for Go, don't think it solved my issue, but it could be useful in general
+
+See: https://stackoverflow.com/a/27501039/13310905
+
+`git config --global url.git@gitlab.com:.insteadOf https://gitlab.com`
