@@ -53,6 +53,18 @@ Find and count all files matching a certain extension. Omit the `| wc -l` to lis
 
 
 
+### Set permissions
+I prefix my key files with my username, so the find command will only affect them. This'll also change perms of `known_hosts` and `known_hosts.old`
+
+- `> sudo chown 700 ~/.ssh`
+- `> cd ~/.ssh`
+- `> sudo find . -name "airi*" -exec chmod 600 {} \;`
+- `> sudo find . -name "airi*.pub" -exec chmod 644 {} \;`
+- `> sudo find . -name "known_hosts*" -exec chmod 600 {} \;`
+- `> chmod 755 config`
+
+
+
 ### Load SSH keys
 - `> eval $(ssh-agent -s)`
 - `> ssh-add ~/.ssh/id_ed25519`
