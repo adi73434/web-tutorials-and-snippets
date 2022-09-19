@@ -1,3 +1,6 @@
+## Resources
+- https://linuxjourney.com/
+
 
 
 ## Convert LF/CRLF
