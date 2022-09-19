@@ -11,7 +11,7 @@ import path from "path";
  * @todo Make this take an override for path separator; the string provided may not
  * necessarily match the type of the host system.
  * @param {string} str
- * @return {*}  {string}
+ * @return {string | undefined}
  */
 const getFilenameFromPath = (str: string): string | undefined => {
 	// -------------------------------------------------------------------------
@@ -41,7 +41,7 @@ const getFilenameFromPath = (str: string): string | undefined => {
  * necessarily match the type of the host system.
  * @param {string} str
  * @param {number} [folderOffset=1]
- * @return {*}  {string}
+ * @return {string}
  */
 const getFolderParentFromPath = (str: string, folderOffset = 1): string => {
 	const split = str.split(path.sep);
@@ -58,7 +58,7 @@ const getFolderParentFromPath = (str: string, folderOffset = 1): string => {
  * @todo Make this take an override for path separator; the string provided may not
  * necessarily match the type of the host system.
  * @param {string} str
- * @return {*}  {string}
+ * @return {string}
  */
 const removeFilenameFromPath = (str: string): string => {
 	// See: https://stackoverflow.com/a/31848508
@@ -74,8 +74,8 @@ const removeFilenameFromPath = (str: string): string => {
  *
  * @todo Make this take an override for path separator; the string provided may not
  * necessarily match the type of the host system.
- * @param {*} src
- * @param {*} callback
+ * @param {any} src
+ * @param {any} callback
  */
 const readFilesRecursivelyCb = (src: any, callback: any) => {
 	// Equivalent of src + "/**/*"" on Linux
@@ -89,7 +89,7 @@ const readFilesRecursivelyCb = (src: any, callback: any) => {
  * an array of the full paths.
  *
  * @param {string} dir
- * @return {*}  {string[]}
+ * @return {string[]}
  */
 const readFilesRecursively = (dir: string): string[] => {
 	const files: string[] = [];

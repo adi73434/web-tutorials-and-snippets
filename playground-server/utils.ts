@@ -2,7 +2,7 @@
 /**
  * something
  *
- * @return {*}  {number}
+ * @return {number}
  */
 const test = ():number  => {
 	return Math.random();
@@ -13,7 +13,7 @@ const test = ():number  => {
 /**
  * This be unexported, and thus not in TypeDoc's docs
  *
- * @return {*}  {number}
+ * @return {number}
  */
 const unexportedFunc = (): number => {
 	return 1;

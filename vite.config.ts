@@ -4,7 +4,7 @@ import path from "path";
 
 export default defineConfig({
 	plugins: [solidPlugin()],
-	root: "meta-client/",
+	root: "playground-client/",
 	build: {
 		// rollupOptions: {
 		// 	input: {

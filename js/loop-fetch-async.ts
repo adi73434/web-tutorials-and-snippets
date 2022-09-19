@@ -8,7 +8,7 @@ type fetchType = Array<number>
 /**
  * Fetch a random number as per API.
  *
- * @return {*}  {Promise<fetchType>}
+ * @return {Promise<fetchType>}
  */
 const fetchNums = async (): Promise<fetchType> => {
 	return fetch("http://www.randomnumberapi.com/api/v1.0/random?min=100&max=1000&count=5", {

@@ -1,13 +1,12 @@
 {
 	"entryPoints": [
-		"./examples/",
-		"./js/",
-		"./js-browser/",
-		"./js-express-api/",
-		"./js-node/",
-		"./meta-client/",
-		"./meta-server/"
+		"./js/*.ts",
+		"./js-browser/*.ts",
+		"./js-express-api/*.ts",
+		"./js-node/*.ts",
+		"./playground-client/src/index.tsx",
+		"./playground-server/server.ts"
 	],
-	"theme": "./node_modules/typedoc-theme-dark/dist/dark/",
+	// "entryPointStrategy": "expand",
 	"out": "docs"
 }

@@ -1,7 +1,7 @@
 {
 	"compilerOptions": {
-		"target": "ES2020",
-		"module": "ES2020",
+		"target": "ES2022",
+		"module": "ES2022",
 		"moduleResolution": "Node",
 		"strict": true,
 		"allowJs": true,
@@ -28,7 +28,7 @@
 			// Browser need not apply
 			"DOM",
 			// "DOM.Iterable",
-			"ES2020"
+			"ES2022"
 		],
 		"outDir": "",
 		"rootDir": "",
@@ -42,8 +42,8 @@
 		"./js-browser/**/*.ts",
 		"./js-express-api/**/*.ts",
 		"./js-node/**/*.ts",
-		"./meta-client/**/*.ts",
-		"./meta-server/**/*.ts"
+		"./playground-client/**/*.ts",
+		"./playground-server/**/*.ts"
 	],
 	"exclude": [
 		"./js/nocompile*.ts"
