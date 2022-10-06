@@ -8,9 +8,15 @@
 
 
 
+### To-read
+- https://en.wikipedia.org/wiki/HATEOAS
+
+
+
 ### Benchmarking
 - https://web.dev/measure/
 - https://developers.google.com/speed/pagespeed/insights/
+- https://www.webpagetest.org/ - "Add HTML" experiment allows adding HTML to a live site.
 
 To test requests per second and request time (not time to full load, as far as I know):
 - using `ApacheBench`, where `n` specifies the amount and `c` the concurrency. This requires that you either specify a file or end the URI with a `/`. You need not specify the port
@@ -22,11 +28,6 @@ To test requests per second and request time (not time to full load, as far as I
 - https://jakearchibald.com/2020/avif-has-landed/
 - https://www.cloudflare.com/cdn/
 - https://developers.google.com/web/tools/workbox
-
-
-
-### To-read
-- https://en.wikipedia.org/wiki/HATEOAS
 
 
 
@@ -59,3 +60,8 @@ To test requests per second and request time (not time to full load, as far as I
 
 
 Using hydration just requires using `hydrate()` instead of `render()`, as shown [here](https://preactjs.com/guide/v10/api-reference/#hydrate)
+
+
+
+### CSS
+- https://gui-challenges.web.app/tooltips/dist/ - tooltip overlay without JS. See https://twitter.com/argyleink/status/1577710321376333824
