@@ -1,28 +1,5 @@
 # WIP!
-***THIS FILE NOT REPRESENTATIVE OF CURRENT STATE OF AFFAIRS WITHIN THE WARZONE OF THIS REPOSITORY***
-
-I've decided to give attention to this repo... now it is the "oh fuck me" monorepo of your nightmares
-
-
-It'll become a
-- Node.js and Browser JS;
-- PHP;
-- HTML;
-- CSS and SCSS;
-- and whatever-else
-
-playground for:
-- non-major scripts;
-- snippets;
-- tutorials;
-- comparisons;
-- examples;
-- and really just about anything.
-
-
-This is really a catch-all repository and I think I might keep it on my GitHub instead of GitLab *(ad populum intensifies)*, because so many people use GitHub.
-
-I'm also considering some cursed stuff like a C++ Lithium server thing, alongside the other server solutions, but using [cmake-js](https://www.npmjs.com/package/cmake-js).
+This is a catch-all repository for web-based code snippets, notes, and overall as a playground.
 
 
 
@@ -36,16 +13,16 @@ Install all frontend deps. This is required if you want to run any of the projec
 
 
 ## Who this is for
-Myself, students, people who haven't yet learned better, and my friends so I can maintain a supposition that I know what I'm doing.
+This is mostly for myself and anyone with a working knowledge or idea of npm, TypeScript, and Webpack.
 
-Prior to the idea of integrating scripts together into the playground setup and overcomplicating everything, this repository was just an almost-abandoned dump of rather inane scripts. Though, between the stage where I thought "I'll clean this mess up" and "I'll integrate everything together" (make it a different, more complicated, kind of mess), I actually thought I could make this repository useful for students. 
+This repository was previously just an almost-abandoned dump of rather inane scripts. Depending on the current state of the repository, it may be really hard to navigate and not more useful than just a dump of scripts, but I'm procrastinating.
 
-This is to say, students for whom showing a more "modern" way of doing things, compared to what I studied and was recommended on my course, could be beneficial  in terms of what they can learn during university and where they can get employed.
+One benefit with this repo is a showcase of how ESLint, TypeScript, nodemon, and webpack can be configured together, and it's a lot better than the tooling I was aware of during University.
 
 
 
 ## Motivation
-I wanted a place to put all my HTML, CSS, JavaScript, and related library snippets. I also thought "what could be a cool way to make this whole thing more interactive", which lead to the playground-client idea. This runs on SolidJS because I came to like the idea of compiling away the need for a runtime library; even [Svelte](https://github.com/halfnelson/svelte-it-will-scale), which apparently doesn't scale well with a large number of components, has a high inflection point compared to React, and SolidJS has phenomenal performance, [at least based on these snythetics](https://krausest.github.io/js-framework-benchmark/2021/table_chrome_93.0.4577.63.html).
+I wanted a place to put all my HTML, CSS, JavaScript, and related library snippets. I also thought "what could be a cool way to make this whole thing more interactive", which lead to the playground-client idea. This runs on SolidJS because I came to like the idea of (mostly) compiling away the need for a runtime library; even [Svelte](https://github.com/halfnelson/svelte-it-will-scale), which apparently doesn't scale well with a large number of components, has a high inflection point compared to React, and SolidJS has phenomenal performance, [at least based on these snythetics](https://krausest.github.io/js-framework-benchmark/2021/table_chrome_93.0.4577.63.html).
 
 Additionally, since I presumed that I'll be writing a non-zero amount of snippets for Node.js/Express, I decided to create a playground-server to which API routes should be attached (based on the folder name in `./js-express-api`).
 
@@ -80,12 +57,67 @@ Servers:
 
 
 
+## Playground
+The goal of this is an interactive way of creating and testing frontend and backend snippets of code.
+
+
+
+### playground-server
+This is the "Playground" server that hosts both the browser and static file server for all of the files within this repository, and it enables creating snippets with Express without having to create a new Express app for every snippet - just export the router and import it in the playground-server server file.
+
+
+`--experimental-specifier-resolution=node ` is required for module `import` statements using TypeScript.
+
+
+The static file serving is done using [serve-index](https://github.com/expressjs/serve-index)
+
+
+
+### playground-client
+This is a frontend for this repository (which will be) built using SolidJS.
+
+Here, this will serve the function of providing a nice way to browse the repository, including notes and such.
+
+This was created with `> npx degit solidjs/templates/ts playground-client` and merged into the main package.json.
+
+This still uses vite.
+
+I cannot find an ESLint plugin for SolidJS... but considering the [Svelte plugin](https://github.com/sveltejs/eslint-plugin-svelte3), maybe potentially eventually I could give a go at writing my own; however, I may be delusional, especially since the [React plugin](https://github.com/yannickcr/eslint-plugin-react) is a lot more complex and I don't know where SolidJS would stand since it, too, uses TSX.
+
+
+To run, do:
+- `> npm run playground-client`
+
+
+
+<br><br>
+
+
+
 ## Folders
+The following are descriptions of folder locations and how to get started. The following folders may be worth looking at as standalone snippets and notes:
+- `./comparisons/`
+- `./examples/`
+- `./js/`
+- `./notes/`
+
+
+
+<br>
 
 
 
 ### `./comparisons`
 This is a folder which contains some comparisons which are best off being separated from the playground-client setup.
+
+
+
+<br>
+
+
+
+### `./docs`
+TypeDoc generated documentation. 
 
 
 
@@ -238,38 +270,6 @@ Access (PHP dev server):
 
 
 <br><br>
-
-
-
-## Playground
-
-
-
-### playground-server
-This is the "Playground" server that hosts both the browser and static file server for all of the files within this repository, and it enables creating snippets with Express without having to create a new Express app for every snippet - just export the router and import it in the playground-server server file.
-
-
-`--experimental-specifier-resolution=node ` is required for module `import` statements using TypeScript.
-
-
-The static file serving is done using [serve-index](https://github.com/expressjs/serve-index)
-
-
-
-### playground-client
-This is a frontend for this repository (which will be) built using SolidJS.
-
-Here, this will serve the function of providing a nice way to browse the repository, including notes and such.
-
-This was created with `> npx degit solidjs/templates/ts playground-client` and merged into the main package.json.
-
-This still uses vite.
-
-I cannot find an ESLint plugin for SolidJS... but considering the [Svelte plugin](https://github.com/sveltejs/eslint-plugin-svelte3), maybe potentially eventually I could give a go at writing my own; however, I may be delusional, especially since the [React plugin](https://github.com/yannickcr/eslint-plugin-react) is a lot more complex and I don't know where SolidJS would stand since it, too, uses TSX.
-
-
-To run, do:
-- `> npm run playground-client`
 
 
 
