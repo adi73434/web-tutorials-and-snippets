@@ -65,3 +65,8 @@ Using hydration just requires using `hydrate()` instead of `render()`, as shown 
 
 ### CSS
 - https://gui-challenges.web.app/tooltips/dist/ - tooltip overlay without JS. See https://twitter.com/argyleink/status/1577710321376333824
+
+
+
+### JSON
+- [RFC 8259](https://datatracker.ietf.org/doc/rfc8259/)
