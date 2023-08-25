@@ -26,3 +26,15 @@ You may also use `> git switch 123-branch-name`, which was added in Git 2.23, bu
 
 Alternatively, the more manual way is to do `> git checkout -b 123-branch-name origin/123-branch-name`, where you provide both the local and origin branch.
 
+
+
+
+## Remove from history
+- `> pip install git-filter-repo` (???)
+- `> git filter-repo --replace-text <(echo 'my_personal_info==>changed_to_this')`
+
+You'll no longer have a remote so you have to set it, then force push:
+- `> git remote add origin git@gitlab.com:mygitlabrepo.git`
+- `> git push --force --set-upstream origin my-branch-name`
+
+You may or may not need to set-upstream on the push, but I just do it.
