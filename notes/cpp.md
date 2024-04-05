@@ -16,6 +16,17 @@ Julien Jorge "effortless performance"
 - https://julien.jorge.st/posts/en/effortless-performance-improvements-in-cpp-std-string_view/ (not as effortless and introduces responsibility over UB)
 - There'll be a 5th post in the series^
 
+<br>
+
+- Shachar Shemesh - "Optimizing Away C++ Virtual Functions May Be Pointless" https://www.youtube.com/watch?v=i5MAXAxp_Tw
+- Dave's Darage - "C++ Super Optimization: 1000X Faster" (constexpr) https://www.youtube.com/watch?v=8-VZoXn8f9U
+- Low Level Learning - "why are switch statements so HECKIN fast?" https://www.youtube.com/watch?v=fjUG_y5ZaL4
+
+
+
+### Algorithms
+- Andrei Alexandrescu - Heuristic binary search - "Robots Are After Your Job: Exploring Generative AI for C++" https://www.youtube.com/watch?v=J48YTbdJNNc
+
 
 
 ### Books
