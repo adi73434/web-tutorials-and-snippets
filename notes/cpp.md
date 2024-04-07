@@ -40,3 +40,10 @@ Julien Jorge "effortless performance"
 - - https://www.youtube.com/watch?v=ELeZAKCN4tY
 - - https://github.com/hsutter/cppfront
 - Staffan Tjernstrom - "Using This Correctly it's `[[unlikely]] at Best` https://www.youtube.com/watch?v=_1A1eSriCV4
+
+
+
+### Compiler Flags
+- https://gcc.gnu.org/onlinedocs/gcc/Option-Summary.html
+- https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html
+- https://simonbyrne.github.io/notes/fastmath/
