@@ -35,5 +35,5 @@ JavaScript written in a way that's more "optimised-C" like, with a lot of compro
 
 
 ## NGINX
-- "Cache" you GZipped files by zipping them yourself, and using `gzip static`. NGINX will look for a `.gz` file with the same name as requested
+- "Cache" you GZipped files by zipping them yourself, and using `gzip_static on`. NGINX will look for a `.gz` file with the same name as requested
 - - https://stackoverflow.com/questions/50842071/cache-gziped-content-with-nginx
