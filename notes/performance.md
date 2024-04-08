@@ -13,6 +13,7 @@ Quoting mrale.ph
 > 
 > One important thing to realize here that the notion of shape in JavaScript VMs is a heuristical approximation. It’s an attempt to dynamically approximate static structure hidden in the program. Things that are shaped the same for a human might not necessary have the same shape for the VM:
 > 
+> ```
 > function A() { this.x = 1 }
 > function B() { this.x = 1 }
 > 
@@ -23,3 +24,16 @@ Quoting mrale.ph
 > 
 > delete d.y
 > // a, b, c, d all have DIFFERENT SHAPES for V8
+> ```
+
+
+
+### Interesting
+JavaScript written in a way that's more "optimised-C" like, with a lot of compromises on maintainability:
+- https://mrale.ph/blog/2011/11/05/the-trap-of-the-performance-sweet-spot.html
+
+
+
+## NGINX
+- "Cache" you GZipped files by zipping them yourself, and using `gzip static`. NGINX will look for a `.gz` file with the same name as requested
+- - https://stackoverflow.com/questions/50842071/cache-gziped-content-with-nginx
